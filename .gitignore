@@ -1,0 +1,21 @@
+# papers (keep links in docs/RELATED_WORK.md instead)
+refs/*.pdf
+# model weights, memory tables, caches
+*.gguf
+*.safetensors
+*.bin
+memory_tables/
+.cache/
+# python
+__pycache__/
+.venv/
+venv/
+# secrets
+.env
+.env.*
+
+# private working material (stays local, never published)
+CLAUDE.md
+astra/
+docs/pt/
+experiments/01-tf-engram-audit/work/
