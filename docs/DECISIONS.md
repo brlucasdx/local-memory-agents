@@ -2,6 +2,11 @@
 
 Newest first. Each entry: date, decision, why, what would change it.
 
+## 2026-10-20 — Library memory = compiled KV packages (v2 passes)
+- **Result:** on Ornith 9B, a 14k-token library reference shipped as a KV snapshot on NVMe gave 100% exact match (bare 0%, RAG 100%) with time to first token 0.34 s vs 9.04 s for RAG (×27). Output byte-identical to RAG in 34/40 tasks; the chosen function was identical in 40/40.
+- **Decision:** library memory continues as compiled KV packages. The two memories in ARCHITECTURE.md become one mechanism (persistent KV snapshots) with two content types: libraries (shared, community-built) and project context (local).
+- **Lesson:** the first B3b run used a raw code-completion prompt in which even RAG failed (18% with a 20-symbol reference). Baselines must be validated before comparing arms.
+
 ## 2026-10-20 — Library memory v1 (additive self-encoded vectors) failed; move to KV-based library memory
 - **Result:** on the fictional `netkit` library with Qwen3-0.6B, injecting one self-encoded vector per symbol gave 0% exact match on test, identical to the bare model and to the shuffled control, across a 130-configuration dev sweep. The hook was verified active.
 - **Decision:** stop this variant. Next: library packages as precompiled KV blocks loaded from NVMe (reusing the B2 mechanism that passed), evaluated on the real core (Ornith 9B via llama.cpp) where RAG is a meaningful baseline.

@@ -1,0 +1,4024 @@
+{
+ "format": "local-memory/source-package@0",
+ "library": "netkit",
+ "version": "0.2.0",
+ "license": "CC0-1.0",
+ "provenance": "Fictional library written for the B3 experiment. It does not exist, so no model can have seen it in training. Version 0.2.0 adds 480 generated decoy symbols (tools/gen_netkit_large.py, seed 20261020).",
+ "symbols": [
+  {
+   "name": "arp_trace",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "follow the path of the queues of ARP",
+   "keys": [
+    "follow the path of the queues of ARP"
+   ]
+  },
+  {
+   "name": "ipsec_scan_alar",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "list the alarms of IPSEC",
+   "keys": [
+    "list the alarms of IPSEC"
+   ]
+  },
+  {
+   "name": "fdb_trace_sess",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "follow the path of the sessions of FDB",
+   "keys": [
+    "follow the path of the sessions of FDB"
+   ]
+  },
+  {
+   "name": "vrf_unfold",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "expand a compact VRF members spec into a full list",
+   "keys": [
+    "expand a compact VRF members spec into a full list"
+   ]
+  },
+  {
+   "name": "oui_audit",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "check the interfaces of OUI against policy",
+   "keys": [
+    "check the interfaces of OUI against policy"
+   ]
+  },
+  {
+   "name": "stp_snap",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "take a snapshot of the neighbors of STP",
+   "keys": [
+    "take a snapshot of the neighbors of STP"
+   ]
+  },
+  {
+   "name": "ipsec_scan_port",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "list the ports of IPSEC",
+   "keys": [
+    "list the ports of IPSEC"
+   ]
+  },
+  {
+   "name": "ifx_merge",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "combine duplicate tunnels of IFX",
+   "keys": [
+    "combine duplicate tunnels of IFX"
+   ]
+  },
+  {
+   "name": "trk_dump_sess",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "return the raw sessions table of TRK",
+   "keys": [
+    "return the raw sessions table of TRK"
+   ]
+  },
+  {
+   "name": "lag_hash",
+   "signature": "(device: str, trunk: str) -> str",
+   "doc": "return the load balancing hash mode of a link aggregation",
+   "keys": [
+    "load balancing hash",
+    "hash mode"
+   ]
+  },
+  {
+   "name": "dns_rank",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "sort the timers of DNS by load",
+   "keys": [
+    "sort the timers of DNS by load"
+   ]
+  },
+  {
+   "name": "pfx_merge_time",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "combine duplicate timers of PFX",
+   "keys": [
+    "combine duplicate timers of PFX"
+   ]
+  },
+  {
+   "name": "mtu_fold_prof",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "compress the profiles of MTU into a compact spec",
+   "keys": [
+    "compress the profiles of MTU into a compact spec"
+   ]
+  },
+  {
+   "name": "ipsec_seal",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "lock the neighbors of IPSEC against changes",
+   "keys": [
+    "lock the neighbors of IPSEC against changes"
+   ]
+  },
+  {
+   "name": "ifx_diff",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "compare two snapshots of the zones of IFX",
+   "keys": [
+    "compare two snapshots of the zones of IFX"
+   ]
+  },
+  {
+   "name": "vxlan_map_alar",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "draw a map of the alarms of VXLAN",
+   "keys": [
+    "draw a map of the alarms of VXLAN"
+   ]
+  },
+  {
+   "name": "fdb_scan",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "list the timers of FDB",
+   "keys": [
+    "list the timers of FDB"
+   ]
+  },
+  {
+   "name": "ospf_lint_port",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "validate the syntax of the OSPF ports",
+   "keys": [
+    "validate the syntax of the OSPF ports"
+   ]
+  },
+  {
+   "name": "vrf_pin",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "make the counters of VRF static",
+   "keys": [
+    "make the counters of VRF static"
+   ]
+  },
+  {
+   "name": "dhcp_fold",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "compress the sessions of DHCP into a compact spec",
+   "keys": [
+    "compress the sessions of DHCP into a compact spec"
+   ]
+  },
+  {
+   "name": "ospf_seal",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "lock the tables of OSPF against changes",
+   "keys": [
+    "lock the tables of OSPF against changes"
+   ]
+  },
+  {
+   "name": "evpn_lint_peer",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "validate the syntax of the EVPN peers",
+   "keys": [
+    "validate the syntax of the EVPN peers"
+   ]
+  },
+  {
+   "name": "vrx_audit",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "check the timers of VRX against policy",
+   "keys": [
+    "check the timers of VRX against policy"
+   ]
+  },
+  {
+   "name": "trk_split",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "divide the groups of TRK by VRF",
+   "keys": [
+    "divide the groups of TRK by VRF"
+   ]
+  },
+  {
+   "name": "lacp_pin_zone",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the zones of LACP static",
+   "keys": [
+    "make the zones of LACP static"
+   ]
+  },
+  {
+   "name": "ont_trace_pref",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "follow the path of the prefixes of ONT",
+   "keys": [
+    "follow the path of the prefixes of ONT"
+   ]
+  },
+  {
+   "name": "vrf_carve_queu",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "split the queues of VRF into smaller blocks",
+   "keys": [
+    "split the queues of VRF into smaller blocks"
+   ]
+  },
+  {
+   "name": "trk_peek_poli",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the policies of TRK",
+   "keys": [
+    "read one entry from the policies of TRK"
+   ]
+  },
+  {
+   "name": "vrf_warm",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "pre-load the prefixes of VRF into cache",
+   "keys": [
+    "pre-load the prefixes of VRF into cache"
+   ]
+  },
+  {
+   "name": "lacp_lint_inte",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "validate the syntax of the LACP interfaces",
+   "keys": [
+    "validate the syntax of the LACP interfaces"
+   ]
+  },
+  {
+   "name": "vrrp_lint",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "validate the syntax of the VRRP policies",
+   "keys": [
+    "validate the syntax of the VRRP policies"
+   ]
+  },
+  {
+   "name": "arp_tally",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "count the interfaces of ARP by state",
+   "keys": [
+    "count the interfaces of ARP by state"
+   ]
+  },
+  {
+   "name": "ntp_purge_tunn",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "remove stale tunnels from NTP",
+   "keys": [
+    "remove stale tunnels from NTP"
+   ]
+  },
+  {
+   "name": "ifx_sync",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "copy the counters of IFX to the standby node",
+   "keys": [
+    "copy the counters of IFX to the standby node"
+   ]
+  },
+  {
+   "name": "oui_carve",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "split the policies of OUI into smaller blocks",
+   "keys": [
+    "split the policies of OUI into smaller blocks"
+   ]
+  },
+  {
+   "name": "lldp_scan",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "list the LLDP neighbors of a device",
+   "keys": [
+    "LLDP neighbors"
+   ]
+  },
+  {
+   "name": "lag_seal",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "lock the queues of LAG against changes",
+   "keys": [
+    "lock the queues of LAG against changes"
+   ]
+  },
+  {
+   "name": "pfx_canon",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "normalize the names of the groups of PFX",
+   "keys": [
+    "normalize the names of the groups of PFX"
+   ]
+  },
+  {
+   "name": "vrx_split_prof",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "divide the profiles of VRX by VRF",
+   "keys": [
+    "divide the profiles of VRX by VRF"
+   ]
+  },
+  {
+   "name": "vrx_pin",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the counters of VRX static",
+   "keys": [
+    "make the counters of VRX static"
+   ]
+  },
+  {
+   "name": "fdb_purge",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "remove stale alarms from FDB",
+   "keys": [
+    "remove stale alarms from FDB"
+   ]
+  },
+  {
+   "name": "lacp_dump",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "return the raw groups table of LACP",
+   "keys": [
+    "return the raw groups table of LACP"
+   ]
+  },
+  {
+   "name": "qos_peek",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "read one entry from the peers of QOS",
+   "keys": [
+    "read one entry from the peers of QOS"
+   ]
+  },
+  {
+   "name": "lag_carve_tunn",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "split the tunnels of LAG into smaller blocks",
+   "keys": [
+    "split the tunnels of LAG into smaller blocks"
+   ]
+  },
+  {
+   "name": "vrrp_audit_leas",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "check the leases of VRRP against policy",
+   "keys": [
+    "check the leases of VRRP against policy"
+   ]
+  },
+  {
+   "name": "qos_scan_port",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "list the ports of QOS",
+   "keys": [
+    "list the ports of QOS"
+   ]
+  },
+  {
+   "name": "bgp_tally",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "count the timers of BGP by state",
+   "keys": [
+    "count the timers of BGP by state"
+   ]
+  },
+  {
+   "name": "igmp_scan_zone",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "list the zones of IGMP",
+   "keys": [
+    "list the zones of IGMP"
+   ]
+  },
+  {
+   "name": "bgp_map_neig",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "draw a map of the neighbors of BGP",
+   "keys": [
+    "draw a map of the neighbors of BGP"
+   ]
+  },
+  {
+   "name": "trk_trace_queu",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "follow the path of the queues of TRK",
+   "keys": [
+    "follow the path of the queues of TRK"
+   ]
+  },
+  {
+   "name": "vrx_snap",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "take a snapshot of the groups of VRX",
+   "keys": [
+    "take a snapshot of the groups of VRX"
+   ]
+  },
+  {
+   "name": "mtu_sync_neig",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "copy the neighbors of MTU to the standby node",
+   "keys": [
+    "copy the neighbors of MTU to the standby node"
+   ]
+  },
+  {
+   "name": "evpn_lint",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "validate the syntax of the EVPN tunnels",
+   "keys": [
+    "validate the syntax of the EVPN tunnels"
+   ]
+  },
+  {
+   "name": "vrx_drain",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "move traffic away from the queues of VRX",
+   "keys": [
+    "move traffic away from the queues of VRX"
+   ]
+  },
+  {
+   "name": "trk_dump_leas",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "return the raw leases table of TRK",
+   "keys": [
+    "return the raw leases table of TRK"
+   ]
+  },
+  {
+   "name": "lldp_unfold_grou",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "expand a compact LLDP groups spec into a full list",
+   "keys": [
+    "expand a compact LLDP groups spec into a full list"
+   ]
+  },
+  {
+   "name": "isis_unfold",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "expand a compact ISIS tunnels spec into a full list",
+   "keys": [
+    "expand a compact ISIS tunnels spec into a full list"
+   ]
+  },
+  {
+   "name": "bfd_probe_zone",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the zones of BFD",
+   "keys": [
+    "test reachability of the zones of BFD"
+   ]
+  },
+  {
+   "name": "dhcp_tally_tabl",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "count the tables of DHCP by state",
+   "keys": [
+    "count the tables of DHCP by state"
+   ]
+  },
+  {
+   "name": "ospf_diff_sess",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compare two snapshots of the sessions of OSPF",
+   "keys": [
+    "compare two snapshots of the sessions of OSPF"
+   ]
+  },
+  {
+   "name": "nat_rank",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "sort the routes of NAT by load",
+   "keys": [
+    "sort the routes of NAT by load"
+   ]
+  },
+  {
+   "name": "igmp_carve",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "split the counters of IGMP into smaller blocks",
+   "keys": [
+    "split the counters of IGMP into smaller blocks"
+   ]
+  },
+  {
+   "name": "snmp_sync_pref",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "copy the prefixes of SNMP to the standby node",
+   "keys": [
+    "copy the prefixes of SNMP to the standby node"
+   ]
+  },
+  {
+   "name": "ifx_canon_pref",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "normalize the names of the prefixes of IFX",
+   "keys": [
+    "normalize the names of the prefixes of IFX"
+   ]
+  },
+  {
+   "name": "lag_drain_poli",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "move traffic away from the policies of LAG",
+   "keys": [
+    "move traffic away from the policies of LAG"
+   ]
+  },
+  {
+   "name": "fdb_trace_prof",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "follow the path of the profiles of FDB",
+   "keys": [
+    "follow the path of the profiles of FDB"
+   ]
+  },
+  {
+   "name": "sfp_audit_entr",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "check the entries of SFP against policy",
+   "keys": [
+    "check the entries of SFP against policy"
+   ]
+  },
+  {
+   "name": "trk_merge",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "combine duplicate prefixes of TRK",
+   "keys": [
+    "combine duplicate prefixes of TRK"
+   ]
+  },
+  {
+   "name": "oui_lint",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "validate the syntax of the OUI sessions",
+   "keys": [
+    "validate the syntax of the OUI sessions"
+   ]
+  },
+  {
+   "name": "fdb_canon_tunn",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "normalize the names of the tunnels of FDB",
+   "keys": [
+    "normalize the names of the tunnels of FDB"
+   ]
+  },
+  {
+   "name": "isis_split_rout",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "divide the routes of ISIS by VRF",
+   "keys": [
+    "divide the routes of ISIS by VRF"
+   ]
+  },
+  {
+   "name": "nat_split_entr",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "divide the entries of NAT by VRF",
+   "keys": [
+    "divide the entries of NAT by VRF"
+   ]
+  },
+  {
+   "name": "gpon_purge",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "remove stale neighbors from GPON",
+   "keys": [
+    "remove stale neighbors from GPON"
+   ]
+  },
+  {
+   "name": "ont_seal",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "lock the routes of ONT against changes",
+   "keys": [
+    "lock the routes of ONT against changes"
+   ]
+  },
+  {
+   "name": "vxlan_warm_zone",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "pre-load the zones of VXLAN into cache",
+   "keys": [
+    "pre-load the zones of VXLAN into cache"
+   ]
+  },
+  {
+   "name": "trk_audit_poli",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "check the policies of TRK against policy",
+   "keys": [
+    "check the policies of TRK against policy"
+   ]
+  },
+  {
+   "name": "oui_owner",
+   "signature": "(mac: str) -> str",
+   "doc": "return the vendor that owns a MAC address prefix",
+   "keys": [
+    "vendor of the MAC",
+    "MAC vendor"
+   ]
+  },
+  {
+   "name": "dhcp_unfold_leas",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "expand a compact DHCP leases spec into a full list",
+   "keys": [
+    "expand a compact DHCP leases spec into a full list"
+   ]
+  },
+  {
+   "name": "ospf_trace",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "follow the path of the tunnels of OSPF",
+   "keys": [
+    "follow the path of the tunnels of OSPF"
+   ]
+  },
+  {
+   "name": "mac_map",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "draw a map of the leases of MAC",
+   "keys": [
+    "draw a map of the leases of MAC"
+   ]
+  },
+  {
+   "name": "mtu_drain",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "move traffic away from the zones of MTU",
+   "keys": [
+    "move traffic away from the zones of MTU"
+   ]
+  },
+  {
+   "name": "olt_split",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "divide the sessions of OLT by VRF",
+   "keys": [
+    "divide the sessions of OLT by VRF"
+   ]
+  },
+  {
+   "name": "ont_dump_zone",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "return the raw zones table of ONT",
+   "keys": [
+    "return the raw zones table of ONT"
+   ]
+  },
+  {
+   "name": "pfx_rank",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "sort the entries of PFX by load",
+   "keys": [
+    "sort the entries of PFX by load"
+   ]
+  },
+  {
+   "name": "mac_probe",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "test reachability of the neighbors of MAC",
+   "keys": [
+    "test reachability of the neighbors of MAC"
+   ]
+  },
+  {
+   "name": "rt_drain_time",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "move traffic away from the timers of RT",
+   "keys": [
+    "move traffic away from the timers of RT"
+   ]
+  },
+  {
+   "name": "rt_map_peer",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "draw a map of the peers of RT",
+   "keys": [
+    "draw a map of the peers of RT"
+   ]
+  },
+  {
+   "name": "isis_seal",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "lock the entries of ISIS against changes",
+   "keys": [
+    "lock the entries of ISIS against changes"
+   ]
+  },
+  {
+   "name": "ntp_trace",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "follow the path of the neighbors of NTP",
+   "keys": [
+    "follow the path of the neighbors of NTP"
+   ]
+  },
+  {
+   "name": "dhcp_pin",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "make the groups of DHCP static",
+   "keys": [
+    "make the groups of DHCP static"
+   ]
+  },
+  {
+   "name": "olt_canon_port",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "normalize the names of the ports of OLT",
+   "keys": [
+    "normalize the names of the ports of OLT"
+   ]
+  },
+  {
+   "name": "qos_peek_time",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "read one entry from the timers of QOS",
+   "keys": [
+    "read one entry from the timers of QOS"
+   ]
+  },
+  {
+   "name": "sfp_warm_tunn",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "pre-load the tunnels of SFP into cache",
+   "keys": [
+    "pre-load the tunnels of SFP into cache"
+   ]
+  },
+  {
+   "name": "sfp_snap",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "take a snapshot of the queues of SFP",
+   "keys": [
+    "take a snapshot of the queues of SFP"
+   ]
+  },
+  {
+   "name": "isis_split_port",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "divide the ports of ISIS by VRF",
+   "keys": [
+    "divide the ports of ISIS by VRF"
+   ]
+  },
+  {
+   "name": "dns_lint_leas",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "validate the syntax of the DNS leases",
+   "keys": [
+    "validate the syntax of the DNS leases"
+   ]
+  },
+  {
+   "name": "vrrp_drain_queu",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "move traffic away from the queues of VRRP",
+   "keys": [
+    "move traffic away from the queues of VRRP"
+   ]
+  },
+  {
+   "name": "qos_unfold",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "expand a compact QOS peers spec into a full list",
+   "keys": [
+    "expand a compact QOS peers spec into a full list"
+   ]
+  },
+  {
+   "name": "ont_dump_inte",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "return the raw interfaces table of ONT",
+   "keys": [
+    "return the raw interfaces table of ONT"
+   ]
+  },
+  {
+   "name": "vrrp_drain",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "move traffic away from the policies of VRRP",
+   "keys": [
+    "move traffic away from the policies of VRRP"
+   ]
+  },
+  {
+   "name": "dns_map_entr",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "draw a map of the entries of DNS",
+   "keys": [
+    "draw a map of the entries of DNS"
+   ]
+  },
+  {
+   "name": "vrx_audit_tunn",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "check the tunnels of VRX against policy",
+   "keys": [
+    "check the tunnels of VRX against policy"
+   ]
+  },
+  {
+   "name": "stp_diff_poli",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "compare two snapshots of the policies of STP",
+   "keys": [
+    "compare two snapshots of the policies of STP"
+   ]
+  },
+  {
+   "name": "syslog_rank_time",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "sort the timers of SYSLOG by load",
+   "keys": [
+    "sort the timers of SYSLOG by load"
+   ]
+  },
+  {
+   "name": "dns_merge",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "combine duplicate zones of DNS",
+   "keys": [
+    "combine duplicate zones of DNS"
+   ]
+  },
+  {
+   "name": "nat_pin",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "make the leases of NAT static",
+   "keys": [
+    "make the leases of NAT static"
+   ]
+  },
+  {
+   "name": "vrf_fold",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "compress the policies of VRF into a compact spec",
+   "keys": [
+    "compress the policies of VRF into a compact spec"
+   ]
+  },
+  {
+   "name": "nat_audit_entr",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "check the entries of NAT against policy",
+   "keys": [
+    "check the entries of NAT against policy"
+   ]
+  },
+  {
+   "name": "dns_unfold",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "expand a compact DNS groups spec into a full list",
+   "keys": [
+    "expand a compact DNS groups spec into a full list"
+   ]
+  },
+  {
+   "name": "vxlan_drain",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "move traffic away from the tables of VXLAN",
+   "keys": [
+    "move traffic away from the tables of VXLAN"
+   ]
+  },
+  {
+   "name": "lldp_unfold_rout",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "expand a compact LLDP routes spec into a full list",
+   "keys": [
+    "expand a compact LLDP routes spec into a full list"
+   ]
+  },
+  {
+   "name": "vxlan_scan_peer",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "list the peers of VXLAN",
+   "keys": [
+    "list the peers of VXLAN"
+   ]
+  },
+  {
+   "name": "dns_rank_port",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "sort the ports of DNS by load",
+   "keys": [
+    "sort the ports of DNS by load"
+   ]
+  },
+  {
+   "name": "trk_carve_coun",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "split the counters of TRK into smaller blocks",
+   "keys": [
+    "split the counters of TRK into smaller blocks"
+   ]
+  },
+  {
+   "name": "ifx_lint_port",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "validate the syntax of the IFX ports",
+   "keys": [
+    "validate the syntax of the IFX ports"
+   ]
+  },
+  {
+   "name": "sfp_pin_pref",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "make the prefixes of SFP static",
+   "keys": [
+    "make the prefixes of SFP static"
+   ]
+  },
+  {
+   "name": "isis_pin",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the counters of ISIS static",
+   "keys": [
+    "make the counters of ISIS static"
+   ]
+  },
+  {
+   "name": "ont_rx",
+   "signature": "(olt: str, onu_id: int) -> float",
+   "doc": "read the optical receive power of an ONU in dBm",
+   "keys": [
+    "optical receive power",
+    "receive power of the ONU"
+   ]
+  },
+  {
+   "name": "acl_map_neig",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "draw a map of the neighbors of ACL",
+   "keys": [
+    "draw a map of the neighbors of ACL"
+   ]
+  },
+  {
+   "name": "poe_pin",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "make the sessions of POE static",
+   "keys": [
+    "make the sessions of POE static"
+   ]
+  },
+  {
+   "name": "vrx_tally_alar",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "count the alarms of VRX by state",
+   "keys": [
+    "count the alarms of VRX by state"
+   ]
+  },
+  {
+   "name": "sfp_audit_alar",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "check the alarms of SFP against policy",
+   "keys": [
+    "check the alarms of SFP against policy"
+   ]
+  },
+  {
+   "name": "dhcp_drain",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "move traffic away from the peers of DHCP",
+   "keys": [
+    "move traffic away from the peers of DHCP"
+   ]
+  },
+  {
+   "name": "fdb_diff_grou",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "compare two snapshots of the groups of FDB",
+   "keys": [
+    "compare two snapshots of the groups of FDB"
+   ]
+  },
+  {
+   "name": "qos_snap_tabl",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "take a snapshot of the tables of QOS",
+   "keys": [
+    "take a snapshot of the tables of QOS"
+   ]
+  },
+  {
+   "name": "snmp_pin_coun",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "make the counters of SNMP static",
+   "keys": [
+    "make the counters of SNMP static"
+   ]
+  },
+  {
+   "name": "vrf_audit",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "check the leases of VRF against policy",
+   "keys": [
+    "check the leases of VRF against policy"
+   ]
+  },
+  {
+   "name": "arp_pin_rout",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "make the routes of ARP static",
+   "keys": [
+    "make the routes of ARP static"
+   ]
+  },
+  {
+   "name": "cfg_drain",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "move traffic away from the entries of CFG",
+   "keys": [
+    "move traffic away from the entries of CFG"
+   ]
+  },
+  {
+   "name": "mtu_pin_tabl",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "make the tables of MTU static",
+   "keys": [
+    "make the tables of MTU static"
+   ]
+  },
+  {
+   "name": "arp_split",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "divide the neighbors of ARP by VRF",
+   "keys": [
+    "divide the neighbors of ARP by VRF"
+   ]
+  },
+  {
+   "name": "ipsec_sync_inte",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "copy the interfaces of IPSEC to the standby node",
+   "keys": [
+    "copy the interfaces of IPSEC to the standby node"
+   ]
+  },
+  {
+   "name": "pfx_peek_neig",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the neighbors of PFX",
+   "keys": [
+    "read one entry from the neighbors of PFX"
+   ]
+  },
+  {
+   "name": "ipsec_split_memb",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "divide the members of IPSEC by VRF",
+   "keys": [
+    "divide the members of IPSEC by VRF"
+   ]
+  },
+  {
+   "name": "mac_probe_peer",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "test reachability of the peers of MAC",
+   "keys": [
+    "test reachability of the peers of MAC"
+   ]
+  },
+  {
+   "name": "dns_probe",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the tables of DNS",
+   "keys": [
+    "test reachability of the tables of DNS"
+   ]
+  },
+  {
+   "name": "ifx_drain",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "move traffic away from the ports of IFX",
+   "keys": [
+    "move traffic away from the ports of IFX"
+   ]
+  },
+  {
+   "name": "bgp_lint",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "validate the syntax of the BGP groups",
+   "keys": [
+    "validate the syntax of the BGP groups"
+   ]
+  },
+  {
+   "name": "fdb_rank",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "sort the tables of FDB by load",
+   "keys": [
+    "sort the tables of FDB by load"
+   ]
+  },
+  {
+   "name": "ospf_rank_tunn",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "sort the tunnels of OSPF by load",
+   "keys": [
+    "sort the tunnels of OSPF by load"
+   ]
+  },
+  {
+   "name": "mtu_dump",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "return the raw alarms table of MTU",
+   "keys": [
+    "return the raw alarms table of MTU"
+   ]
+  },
+  {
+   "name": "pim_carve",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "split the profiles of PIM into smaller blocks",
+   "keys": [
+    "split the profiles of PIM into smaller blocks"
+   ]
+  },
+  {
+   "name": "acl_tally",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "count the leases of ACL by state",
+   "keys": [
+    "count the leases of ACL by state"
+   ]
+  },
+  {
+   "name": "fdb_unfold_neig",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "expand a compact FDB neighbors spec into a full list",
+   "keys": [
+    "expand a compact FDB neighbors spec into a full list"
+   ]
+  },
+  {
+   "name": "qos_lint_entr",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "validate the syntax of the QOS entries",
+   "keys": [
+    "validate the syntax of the QOS entries"
+   ]
+  },
+  {
+   "name": "cfg_diff_prof",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "compare two snapshots of the profiles of CFG",
+   "keys": [
+    "compare two snapshots of the profiles of CFG"
+   ]
+  },
+  {
+   "name": "poe_rank",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "sort the peers of POE by load",
+   "keys": [
+    "sort the peers of POE by load"
+   ]
+  },
+  {
+   "name": "ntp_rank_entr",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "sort the entries of NTP by load",
+   "keys": [
+    "sort the entries of NTP by load"
+   ]
+  },
+  {
+   "name": "qos_audit",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "check the profiles of QOS against policy",
+   "keys": [
+    "check the profiles of QOS against policy"
+   ]
+  },
+  {
+   "name": "mpls_purge",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "remove stale alarms from MPLS",
+   "keys": [
+    "remove stale alarms from MPLS"
+   ]
+  },
+  {
+   "name": "dhcp_seal_neig",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "lock the neighbors of DHCP against changes",
+   "keys": [
+    "lock the neighbors of DHCP against changes"
+   ]
+  },
+  {
+   "name": "lag_carve_queu",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "split the queues of LAG into smaller blocks",
+   "keys": [
+    "split the queues of LAG into smaller blocks"
+   ]
+  },
+  {
+   "name": "dhcp_lint_sess",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "validate the syntax of the DHCP sessions",
+   "keys": [
+    "validate the syntax of the DHCP sessions"
+   ]
+  },
+  {
+   "name": "vrf_carve",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "split the peers of VRF into smaller blocks",
+   "keys": [
+    "split the peers of VRF into smaller blocks"
+   ]
+  },
+  {
+   "name": "vxlan_probe_poli",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "test reachability of the policies of VXLAN",
+   "keys": [
+    "test reachability of the policies of VXLAN"
+   ]
+  },
+  {
+   "name": "qos_warm_neig",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "pre-load the neighbors of QOS into cache",
+   "keys": [
+    "pre-load the neighbors of QOS into cache"
+   ]
+  },
+  {
+   "name": "stp_map",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "draw a map of the peers of STP",
+   "keys": [
+    "draw a map of the peers of STP"
+   ]
+  },
+  {
+   "name": "isis_map_poli",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "draw a map of the policies of ISIS",
+   "keys": [
+    "draw a map of the policies of ISIS"
+   ]
+  },
+  {
+   "name": "bfd_scan",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "list the queues of BFD",
+   "keys": [
+    "list the queues of BFD"
+   ]
+  },
+  {
+   "name": "lldp_unfold",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "expand a compact LLDP sessions spec into a full list",
+   "keys": [
+    "expand a compact LLDP sessions spec into a full list"
+   ]
+  },
+  {
+   "name": "lldp_snap",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "take a snapshot of the policies of LLDP",
+   "keys": [
+    "take a snapshot of the policies of LLDP"
+   ]
+  },
+  {
+   "name": "vrrp_snap",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "take a snapshot of the entries of VRRP",
+   "keys": [
+    "take a snapshot of the entries of VRRP"
+   ]
+  },
+  {
+   "name": "mtu_warm_leas",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "pre-load the leases of MTU into cache",
+   "keys": [
+    "pre-load the leases of MTU into cache"
+   ]
+  },
+  {
+   "name": "qos_snap_rout",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "take a snapshot of the routes of QOS",
+   "keys": [
+    "take a snapshot of the routes of QOS"
+   ]
+  },
+  {
+   "name": "fdb_lint",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "validate the syntax of the FDB profiles",
+   "keys": [
+    "validate the syntax of the FDB profiles"
+   ]
+  },
+  {
+   "name": "igmp_dump_zone",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "return the raw zones table of IGMP",
+   "keys": [
+    "return the raw zones table of IGMP"
+   ]
+  },
+  {
+   "name": "trk_peek",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "read one entry from the interfaces of TRK",
+   "keys": [
+    "read one entry from the interfaces of TRK"
+   ]
+  },
+  {
+   "name": "rt_sweep",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "scan all devices for RT interfaces",
+   "keys": [
+    "scan all devices for RT interfaces"
+   ]
+  },
+  {
+   "name": "bgp_pin_poli",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "make the policies of BGP static",
+   "keys": [
+    "make the policies of BGP static"
+   ]
+  },
+  {
+   "name": "dhcp_seal_tabl",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "lock the tables of DHCP against changes",
+   "keys": [
+    "lock the tables of DHCP against changes"
+   ]
+  },
+  {
+   "name": "oui_rank",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "sort the sessions of OUI by load",
+   "keys": [
+    "sort the sessions of OUI by load"
+   ]
+  },
+  {
+   "name": "lacp_rank",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "sort the ports of LACP by load",
+   "keys": [
+    "sort the ports of LACP by load"
+   ]
+  },
+  {
+   "name": "ospf_merge_poli",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "combine duplicate policies of OSPF",
+   "keys": [
+    "combine duplicate policies of OSPF"
+   ]
+  },
+  {
+   "name": "lldp_merge",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "combine duplicate profiles of LLDP",
+   "keys": [
+    "combine duplicate profiles of LLDP"
+   ]
+  },
+  {
+   "name": "dhcp_tally",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "count the alarms of DHCP by state",
+   "keys": [
+    "count the alarms of DHCP by state"
+   ]
+  },
+  {
+   "name": "lag_warm_peer",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "pre-load the peers of LAG into cache",
+   "keys": [
+    "pre-load the peers of LAG into cache"
+   ]
+  },
+  {
+   "name": "pim_dump_rout",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "return the raw routes table of PIM",
+   "keys": [
+    "return the raw routes table of PIM"
+   ]
+  },
+  {
+   "name": "bfd_warm",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "pre-load the policies of BFD into cache",
+   "keys": [
+    "pre-load the policies of BFD into cache"
+   ]
+  },
+  {
+   "name": "dns_peek",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "read one entry from the peers of DNS",
+   "keys": [
+    "read one entry from the peers of DNS"
+   ]
+  },
+  {
+   "name": "fdb_map_poli",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "draw a map of the policies of FDB",
+   "keys": [
+    "draw a map of the policies of FDB"
+   ]
+  },
+  {
+   "name": "pfx_audit",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "check the neighbors of PFX against policy",
+   "keys": [
+    "check the neighbors of PFX against policy"
+   ]
+  },
+  {
+   "name": "poe_carve_tunn",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "split the tunnels of POE into smaller blocks",
+   "keys": [
+    "split the tunnels of POE into smaller blocks"
+   ]
+  },
+  {
+   "name": "vrrp_peek",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "read one entry from the ports of VRRP",
+   "keys": [
+    "read one entry from the ports of VRRP"
+   ]
+  },
+  {
+   "name": "vrx_map",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "draw a map of the tables of VRX",
+   "keys": [
+    "draw a map of the tables of VRX"
+   ]
+  },
+  {
+   "name": "ospf_canon_coun",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "normalize the names of the counters of OSPF",
+   "keys": [
+    "normalize the names of the counters of OSPF"
+   ]
+  },
+  {
+   "name": "dns_scan",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "list the zones of DNS",
+   "keys": [
+    "list the zones of DNS"
+   ]
+  },
+  {
+   "name": "dhcp_snap",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "take a snapshot of the routes of DHCP",
+   "keys": [
+    "take a snapshot of the routes of DHCP"
+   ]
+  },
+  {
+   "name": "qos_probe",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "test reachability of the prefixes of QOS",
+   "keys": [
+    "test reachability of the prefixes of QOS"
+   ]
+  },
+  {
+   "name": "dns_lint_peer",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "validate the syntax of the DNS peers",
+   "keys": [
+    "validate the syntax of the DNS peers"
+   ]
+  },
+  {
+   "name": "mtu_warm_queu",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "pre-load the queues of MTU into cache",
+   "keys": [
+    "pre-load the queues of MTU into cache"
+   ]
+  },
+  {
+   "name": "cfg_canon",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "normalize the names of the peers of CFG",
+   "keys": [
+    "normalize the names of the peers of CFG"
+   ]
+  },
+  {
+   "name": "snmp_drain",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "move traffic away from the zones of SNMP",
+   "keys": [
+    "move traffic away from the zones of SNMP"
+   ]
+  },
+  {
+   "name": "mtu_probe",
+   "signature": "(host: str) -> int",
+   "doc": "discover the path MTU to a host",
+   "keys": [
+    "path MTU"
+   ]
+  },
+  {
+   "name": "nat_lint",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "validate the syntax of the NAT timers",
+   "keys": [
+    "validate the syntax of the NAT timers"
+   ]
+  },
+  {
+   "name": "igmp_tally",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "count the sessions of IGMP by state",
+   "keys": [
+    "count the sessions of IGMP by state"
+   ]
+  },
+  {
+   "name": "mac_fold",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "compress the tunnels of MAC into a compact spec",
+   "keys": [
+    "compress the tunnels of MAC into a compact spec"
+   ]
+  },
+  {
+   "name": "qos_rank_pref",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "sort the prefixes of QOS by load",
+   "keys": [
+    "sort the prefixes of QOS by load"
+   ]
+  },
+  {
+   "name": "lacp_warm_memb",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "pre-load the members of LACP into cache",
+   "keys": [
+    "pre-load the members of LACP into cache"
+   ]
+  },
+  {
+   "name": "lldp_sync_memb",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "copy the members of LLDP to the standby node",
+   "keys": [
+    "copy the members of LLDP to the standby node"
+   ]
+  },
+  {
+   "name": "sfp_tally_zone",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "count the zones of SFP by state",
+   "keys": [
+    "count the zones of SFP by state"
+   ]
+  },
+  {
+   "name": "bfd_probe",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "test reachability of the tunnels of BFD",
+   "keys": [
+    "test reachability of the tunnels of BFD"
+   ]
+  },
+  {
+   "name": "arp_dump",
+   "signature": "(device: str) -> dict[str, str]",
+   "doc": "return the ARP table of a device as ip to mac",
+   "keys": [
+    "ARP table"
+   ]
+  },
+  {
+   "name": "fdb_diff",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compare two snapshots of the alarms of FDB",
+   "keys": [
+    "compare two snapshots of the alarms of FDB"
+   ]
+  },
+  {
+   "name": "qos_trace",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "follow the path of the policies of QOS",
+   "keys": [
+    "follow the path of the policies of QOS"
+   ]
+  },
+  {
+   "name": "mpls_drain",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "move traffic away from the prefixes of MPLS",
+   "keys": [
+    "move traffic away from the prefixes of MPLS"
+   ]
+  },
+  {
+   "name": "nat_seal_port",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "lock the ports of NAT against changes",
+   "keys": [
+    "lock the ports of NAT against changes"
+   ]
+  },
+  {
+   "name": "ntp_snap",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "take a snapshot of the ports of NTP",
+   "keys": [
+    "take a snapshot of the ports of NTP"
+   ]
+  },
+  {
+   "name": "stp_diff",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "compare two snapshots of the tables of STP",
+   "keys": [
+    "compare two snapshots of the tables of STP"
+   ]
+  },
+  {
+   "name": "trk_rank_poli",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "sort the policies of TRK by load",
+   "keys": [
+    "sort the policies of TRK by load"
+   ]
+  },
+  {
+   "name": "olt_split_poli",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "divide the policies of OLT by VRF",
+   "keys": [
+    "divide the policies of OLT by VRF"
+   ]
+  },
+  {
+   "name": "ifx_purge_entr",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "remove stale entries from IFX",
+   "keys": [
+    "remove stale entries from IFX"
+   ]
+  },
+  {
+   "name": "syslog_unfold",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "expand a compact SYSLOG zones spec into a full list",
+   "keys": [
+    "expand a compact SYSLOG zones spec into a full list"
+   ]
+  },
+  {
+   "name": "cfg_trace",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "follow the path of the policies of CFG",
+   "keys": [
+    "follow the path of the policies of CFG"
+   ]
+  },
+  {
+   "name": "isis_sweep",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "scan all devices for ISIS ports",
+   "keys": [
+    "scan all devices for ISIS ports"
+   ]
+  },
+  {
+   "name": "cfg_carve",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "split the ports of CFG into smaller blocks",
+   "keys": [
+    "split the ports of CFG into smaller blocks"
+   ]
+  },
+  {
+   "name": "gpon_unfold",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "expand a compact GPON neighbors spec into a full list",
+   "keys": [
+    "expand a compact GPON neighbors spec into a full list"
+   ]
+  },
+  {
+   "name": "snmp_fold",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "compress the routes of SNMP into a compact spec",
+   "keys": [
+    "compress the routes of SNMP into a compact spec"
+   ]
+  },
+  {
+   "name": "evpn_canon_time",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "normalize the names of the timers of EVPN",
+   "keys": [
+    "normalize the names of the timers of EVPN"
+   ]
+  },
+  {
+   "name": "pfx_carve",
+   "signature": "(prefix: str, new_len: int) -> list[str]",
+   "doc": "split an IP prefix into subnets of a new length",
+   "keys": [
+    "split the prefix",
+    "into subnets"
+   ]
+  },
+  {
+   "name": "isis_trace_alar",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "follow the path of the alarms of ISIS",
+   "keys": [
+    "follow the path of the alarms of ISIS"
+   ]
+  },
+  {
+   "name": "snmp_warm",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "pre-load the tunnels of SNMP into cache",
+   "keys": [
+    "pre-load the tunnels of SNMP into cache"
+   ]
+  },
+  {
+   "name": "lag_warm_alar",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "pre-load the alarms of LAG into cache",
+   "keys": [
+    "pre-load the alarms of LAG into cache"
+   ]
+  },
+  {
+   "name": "mpls_seal_coun",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "lock the counters of MPLS against changes",
+   "keys": [
+    "lock the counters of MPLS against changes"
+   ]
+  },
+  {
+   "name": "bgp_dump",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "return the raw groups table of BGP",
+   "keys": [
+    "return the raw groups table of BGP"
+   ]
+  },
+  {
+   "name": "rt_unfold",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "expand a compact RT sessions spec into a full list",
+   "keys": [
+    "expand a compact RT sessions spec into a full list"
+   ]
+  },
+  {
+   "name": "rt_merge_tabl",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "combine duplicate tables of RT",
+   "keys": [
+    "combine duplicate tables of RT"
+   ]
+  },
+  {
+   "name": "oui_audit_sess",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "check the sessions of OUI against policy",
+   "keys": [
+    "check the sessions of OUI against policy"
+   ]
+  },
+  {
+   "name": "bfd_fold_inte",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "compress the interfaces of BFD into a compact spec",
+   "keys": [
+    "compress the interfaces of BFD into a compact spec"
+   ]
+  },
+  {
+   "name": "mpls_unfold",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "expand a compact MPLS sessions spec into a full list",
+   "keys": [
+    "expand a compact MPLS sessions spec into a full list"
+   ]
+  },
+  {
+   "name": "ipsec_fold",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "compress the timers of IPSEC into a compact spec",
+   "keys": [
+    "compress the timers of IPSEC into a compact spec"
+   ]
+  },
+  {
+   "name": "ont_dump_neig",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "return the raw neighbors table of ONT",
+   "keys": [
+    "return the raw neighbors table of ONT"
+   ]
+  },
+  {
+   "name": "vrx_scan_pref",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "list the prefixes of VRX",
+   "keys": [
+    "list the prefixes of VRX"
+   ]
+  },
+  {
+   "name": "vrf_rank_rout",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "sort the routes of VRF by load",
+   "keys": [
+    "sort the routes of VRF by load"
+   ]
+  },
+  {
+   "name": "pfx_map_entr",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "draw a map of the entries of PFX",
+   "keys": [
+    "draw a map of the entries of PFX"
+   ]
+  },
+  {
+   "name": "gpon_warm_inte",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "pre-load the interfaces of GPON into cache",
+   "keys": [
+    "pre-load the interfaces of GPON into cache"
+   ]
+  },
+  {
+   "name": "pim_rank",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "sort the interfaces of PIM by load",
+   "keys": [
+    "sort the interfaces of PIM by load"
+   ]
+  },
+  {
+   "name": "olt_fold_time",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "compress the timers of OLT into a compact spec",
+   "keys": [
+    "compress the timers of OLT into a compact spec"
+   ]
+  },
+  {
+   "name": "ont_sweep",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "scan all devices for ONT peers",
+   "keys": [
+    "scan all devices for ONT peers"
+   ]
+  },
+  {
+   "name": "snmp_trace",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "follow the path of the leases of SNMP",
+   "keys": [
+    "follow the path of the leases of SNMP"
+   ]
+  },
+  {
+   "name": "ont_warm_time",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "pre-load the timers of ONT into cache",
+   "keys": [
+    "pre-load the timers of ONT into cache"
+   ]
+  },
+  {
+   "name": "ipsec_diff",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "compare two snapshots of the peers of IPSEC",
+   "keys": [
+    "compare two snapshots of the peers of IPSEC"
+   ]
+  },
+  {
+   "name": "ifx_tally_port",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "count the ports of IFX by state",
+   "keys": [
+    "count the ports of IFX by state"
+   ]
+  },
+  {
+   "name": "ntp_split",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "divide the sessions of NTP by VRF",
+   "keys": [
+    "divide the sessions of NTP by VRF"
+   ]
+  },
+  {
+   "name": "gpon_carve_time",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "split the timers of GPON into smaller blocks",
+   "keys": [
+    "split the timers of GPON into smaller blocks"
+   ]
+  },
+  {
+   "name": "olt_unfold",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "expand a compact OLT entries spec into a full list",
+   "keys": [
+    "expand a compact OLT entries spec into a full list"
+   ]
+  },
+  {
+   "name": "isis_unfold_leas",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "expand a compact ISIS leases spec into a full list",
+   "keys": [
+    "expand a compact ISIS leases spec into a full list"
+   ]
+  },
+  {
+   "name": "bfd_peek_poli",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "read one entry from the policies of BFD",
+   "keys": [
+    "read one entry from the policies of BFD"
+   ]
+  },
+  {
+   "name": "syslog_drain",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "move traffic away from the tunnels of SYSLOG",
+   "keys": [
+    "move traffic away from the tunnels of SYSLOG"
+   ]
+  },
+  {
+   "name": "trk_tally",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "count the groups of TRK by state",
+   "keys": [
+    "count the groups of TRK by state"
+   ]
+  },
+  {
+   "name": "ospf_probe_leas",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "test reachability of the leases of OSPF",
+   "keys": [
+    "test reachability of the leases of OSPF"
+   ]
+  },
+  {
+   "name": "evpn_scan",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "list the alarms of EVPN",
+   "keys": [
+    "list the alarms of EVPN"
+   ]
+  },
+  {
+   "name": "olt_merge_poli",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "combine duplicate policies of OLT",
+   "keys": [
+    "combine duplicate policies of OLT"
+   ]
+  },
+  {
+   "name": "mtu_map_grou",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "draw a map of the groups of MTU",
+   "keys": [
+    "draw a map of the groups of MTU"
+   ]
+  },
+  {
+   "name": "acl_sync_tabl",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "copy the tables of ACL to the standby node",
+   "keys": [
+    "copy the tables of ACL to the standby node"
+   ]
+  },
+  {
+   "name": "oui_dump",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "return the raw sessions table of OUI",
+   "keys": [
+    "return the raw sessions table of OUI"
+   ]
+  },
+  {
+   "name": "pim_sweep",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "scan all devices for PIM counters",
+   "keys": [
+    "scan all devices for PIM counters"
+   ]
+  },
+  {
+   "name": "lacp_split",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "divide the groups of LACP by VRF",
+   "keys": [
+    "divide the groups of LACP by VRF"
+   ]
+  },
+  {
+   "name": "syslog_drain_time",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "move traffic away from the timers of SYSLOG",
+   "keys": [
+    "move traffic away from the timers of SYSLOG"
+   ]
+  },
+  {
+   "name": "ont_probe_port",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "test reachability of the ports of ONT",
+   "keys": [
+    "test reachability of the ports of ONT"
+   ]
+  },
+  {
+   "name": "lag_probe",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "test reachability of the alarms of LAG",
+   "keys": [
+    "test reachability of the alarms of LAG"
+   ]
+  },
+  {
+   "name": "ont_peek_memb",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the members of ONT",
+   "keys": [
+    "read one entry from the members of ONT"
+   ]
+  },
+  {
+   "name": "syslog_split_neig",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "divide the neighbors of SYSLOG by VRF",
+   "keys": [
+    "divide the neighbors of SYSLOG by VRF"
+   ]
+  },
+  {
+   "name": "bgp_warm_neig",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "pre-load the neighbors of BGP into cache",
+   "keys": [
+    "pre-load the neighbors of BGP into cache"
+   ]
+  },
+  {
+   "name": "oui_pin",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "make the ports of OUI static",
+   "keys": [
+    "make the ports of OUI static"
+   ]
+  },
+  {
+   "name": "dhcp_unfold",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "expand a compact DHCP routes spec into a full list",
+   "keys": [
+    "expand a compact DHCP routes spec into a full list"
+   ]
+  },
+  {
+   "name": "lag_probe_tunn",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the tunnels of LAG",
+   "keys": [
+    "test reachability of the tunnels of LAG"
+   ]
+  },
+  {
+   "name": "poe_peek_queu",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the queues of POE",
+   "keys": [
+    "read one entry from the queues of POE"
+   ]
+  },
+  {
+   "name": "bfd_carve",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "split the zones of BFD into smaller blocks",
+   "keys": [
+    "split the zones of BFD into smaller blocks"
+   ]
+  },
+  {
+   "name": "nat_fold_inte",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "compress the interfaces of NAT into a compact spec",
+   "keys": [
+    "compress the interfaces of NAT into a compact spec"
+   ]
+  },
+  {
+   "name": "ifx_rank_sess",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "sort the sessions of IFX by load",
+   "keys": [
+    "sort the sessions of IFX by load"
+   ]
+  },
+  {
+   "name": "stp_rank_prof",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "sort the profiles of STP by load",
+   "keys": [
+    "sort the profiles of STP by load"
+   ]
+  },
+  {
+   "name": "ntp_drain",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "move traffic away from the ports of NTP",
+   "keys": [
+    "move traffic away from the ports of NTP"
+   ]
+  },
+  {
+   "name": "vrx_seal_neig",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "lock the neighbors of VRX against changes",
+   "keys": [
+    "lock the neighbors of VRX against changes"
+   ]
+  },
+  {
+   "name": "stp_sweep",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "scan all devices for STP policies",
+   "keys": [
+    "scan all devices for STP policies"
+   ]
+  },
+  {
+   "name": "fdb_tally_time",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "count the timers of FDB by state",
+   "keys": [
+    "count the timers of FDB by state"
+   ]
+  },
+  {
+   "name": "bfd_audit_time",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "check the timers of BFD against policy",
+   "keys": [
+    "check the timers of BFD against policy"
+   ]
+  },
+  {
+   "name": "pim_canon_peer",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "normalize the names of the peers of PIM",
+   "keys": [
+    "normalize the names of the peers of PIM"
+   ]
+  },
+  {
+   "name": "snmp_split",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "divide the policies of SNMP by VRF",
+   "keys": [
+    "divide the policies of SNMP by VRF"
+   ]
+  },
+  {
+   "name": "ntp_skew",
+   "signature": "(device: str) -> float",
+   "doc": "return the clock offset of a device against its NTP server in ms",
+   "keys": [
+    "clock offset",
+    "NTP offset"
+   ]
+  },
+  {
+   "name": "vxlan_diff",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compare two snapshots of the timers of VXLAN",
+   "keys": [
+    "compare two snapshots of the timers of VXLAN"
+   ]
+  },
+  {
+   "name": "acl_canon",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "normalize the names of the prefixes of ACL",
+   "keys": [
+    "normalize the names of the prefixes of ACL"
+   ]
+  },
+  {
+   "name": "isis_dump",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "return the raw members table of ISIS",
+   "keys": [
+    "return the raw members table of ISIS"
+   ]
+  },
+  {
+   "name": "ont_merge",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "combine duplicate peers of ONT",
+   "keys": [
+    "combine duplicate peers of ONT"
+   ]
+  },
+  {
+   "name": "olt_dump_tunn",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "return the raw tunnels table of OLT",
+   "keys": [
+    "return the raw tunnels table of OLT"
+   ]
+  },
+  {
+   "name": "trk_seal_entr",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "lock the entries of TRK against changes",
+   "keys": [
+    "lock the entries of TRK against changes"
+   ]
+  },
+  {
+   "name": "vrf_merge_alar",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "combine duplicate alarms of VRF",
+   "keys": [
+    "combine duplicate alarms of VRF"
+   ]
+  },
+  {
+   "name": "trk_lint_leas",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "validate the syntax of the TRK leases",
+   "keys": [
+    "validate the syntax of the TRK leases"
+   ]
+  },
+  {
+   "name": "mtu_snap_neig",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "take a snapshot of the neighbors of MTU",
+   "keys": [
+    "take a snapshot of the neighbors of MTU"
+   ]
+  },
+  {
+   "name": "trk_rank_tunn",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "sort the tunnels of TRK by load",
+   "keys": [
+    "sort the tunnels of TRK by load"
+   ]
+  },
+  {
+   "name": "nat_scan_zone",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "list the zones of NAT",
+   "keys": [
+    "list the zones of NAT"
+   ]
+  },
+  {
+   "name": "evpn_merge",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "combine duplicate queues of EVPN",
+   "keys": [
+    "combine duplicate queues of EVPN"
+   ]
+  },
+  {
+   "name": "gpon_diff",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "compare two snapshots of the policies of GPON",
+   "keys": [
+    "compare two snapshots of the policies of GPON"
+   ]
+  },
+  {
+   "name": "ont_map",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "draw a map of the members of ONT",
+   "keys": [
+    "draw a map of the members of ONT"
+   ]
+  },
+  {
+   "name": "arp_merge",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "combine duplicate neighbors of ARP",
+   "keys": [
+    "combine duplicate neighbors of ARP"
+   ]
+  },
+  {
+   "name": "rt_dump",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "return the raw sessions table of RT",
+   "keys": [
+    "return the raw sessions table of RT"
+   ]
+  },
+  {
+   "name": "bgp_audit_rout",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "check the routes of BGP against policy",
+   "keys": [
+    "check the routes of BGP against policy"
+   ]
+  },
+  {
+   "name": "fdb_seal",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "lock the prefixes of FDB against changes",
+   "keys": [
+    "lock the prefixes of FDB against changes"
+   ]
+  },
+  {
+   "name": "ospf_drain",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "move traffic away from the peers of OSPF",
+   "keys": [
+    "move traffic away from the peers of OSPF"
+   ]
+  },
+  {
+   "name": "gpon_carve_grou",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "split the groups of GPON into smaller blocks",
+   "keys": [
+    "split the groups of GPON into smaller blocks"
+   ]
+  },
+  {
+   "name": "fdb_merge",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "combine duplicate zones of FDB",
+   "keys": [
+    "combine duplicate zones of FDB"
+   ]
+  },
+  {
+   "name": "acl_split",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "divide the neighbors of ACL by VRF",
+   "keys": [
+    "divide the neighbors of ACL by VRF"
+   ]
+  },
+  {
+   "name": "cfg_lint",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "validate the syntax of the CFG entries",
+   "keys": [
+    "validate the syntax of the CFG entries"
+   ]
+  },
+  {
+   "name": "oui_split_queu",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "divide the queues of OUI by VRF",
+   "keys": [
+    "divide the queues of OUI by VRF"
+   ]
+  },
+  {
+   "name": "mtu_scan_time",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "list the timers of MTU",
+   "keys": [
+    "list the timers of MTU"
+   ]
+  },
+  {
+   "name": "pfx_seal_inte",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "lock the interfaces of PFX against changes",
+   "keys": [
+    "lock the interfaces of PFX against changes"
+   ]
+  },
+  {
+   "name": "arp_drain_inte",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "move traffic away from the interfaces of ARP",
+   "keys": [
+    "move traffic away from the interfaces of ARP"
+   ]
+  },
+  {
+   "name": "qos_merge",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "combine duplicate profiles of QOS",
+   "keys": [
+    "combine duplicate profiles of QOS"
+   ]
+  },
+  {
+   "name": "ipsec_split",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "divide the groups of IPSEC by VRF",
+   "keys": [
+    "divide the groups of IPSEC by VRF"
+   ]
+  },
+  {
+   "name": "vxlan_sync_inte",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "copy the interfaces of VXLAN to the standby node",
+   "keys": [
+    "copy the interfaces of VXLAN to the standby node"
+   ]
+  },
+  {
+   "name": "stp_root",
+   "signature": "(switch: str, vlan: int) -> str",
+   "doc": "return the spanning tree root bridge for a VLAN",
+   "keys": [
+    "spanning tree root",
+    "root bridge"
+   ]
+  },
+  {
+   "name": "syslog_peek_tabl",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "read one entry from the tables of SYSLOG",
+   "keys": [
+    "read one entry from the tables of SYSLOG"
+   ]
+  },
+  {
+   "name": "cfg_lint_pref",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "validate the syntax of the CFG prefixes",
+   "keys": [
+    "validate the syntax of the CFG prefixes"
+   ]
+  },
+  {
+   "name": "bfd_canon",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "normalize the names of the interfaces of BFD",
+   "keys": [
+    "normalize the names of the interfaces of BFD"
+   ]
+  },
+  {
+   "name": "qos_purge_leas",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "remove stale leases from QOS",
+   "keys": [
+    "remove stale leases from QOS"
+   ]
+  },
+  {
+   "name": "stp_peek",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the policies of STP",
+   "keys": [
+    "read one entry from the policies of STP"
+   ]
+  },
+  {
+   "name": "vrx_sweep",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "scan all devices for VRX members",
+   "keys": [
+    "scan all devices for VRX members"
+   ]
+  },
+  {
+   "name": "fdb_trace_entr",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "follow the path of the entries of FDB",
+   "keys": [
+    "follow the path of the entries of FDB"
+   ]
+  },
+  {
+   "name": "trk_sweep",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "scan all devices for TRK ports",
+   "keys": [
+    "scan all devices for TRK ports"
+   ]
+  },
+  {
+   "name": "evpn_split_leas",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "divide the leases of EVPN by VRF",
+   "keys": [
+    "divide the leases of EVPN by VRF"
+   ]
+  },
+  {
+   "name": "ntp_map_alar",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "draw a map of the alarms of NTP",
+   "keys": [
+    "draw a map of the alarms of NTP"
+   ]
+  },
+  {
+   "name": "vrf_snap",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "take a snapshot of the tunnels of VRF",
+   "keys": [
+    "take a snapshot of the tunnels of VRF"
+   ]
+  },
+  {
+   "name": "fdb_trace_neig",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "follow the path of the neighbors of FDB",
+   "keys": [
+    "follow the path of the neighbors of FDB"
+   ]
+  },
+  {
+   "name": "snmp_walk2",
+   "signature": "(host: str, oid: str) -> dict[str, str]",
+   "doc": "walk an SNMP OID subtree on a host",
+   "keys": [
+    "SNMP OID subtree",
+    "walk the OID"
+   ]
+  },
+  {
+   "name": "mtu_scan_neig",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "list the neighbors of MTU",
+   "keys": [
+    "list the neighbors of MTU"
+   ]
+  },
+  {
+   "name": "oui_drain",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "move traffic away from the entries of OUI",
+   "keys": [
+    "move traffic away from the entries of OUI"
+   ]
+  },
+  {
+   "name": "bfd_rank",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "sort the prefixes of BFD by load",
+   "keys": [
+    "sort the prefixes of BFD by load"
+   ]
+  },
+  {
+   "name": "lldp_dump_memb",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "return the raw members table of LLDP",
+   "keys": [
+    "return the raw members table of LLDP"
+   ]
+  },
+  {
+   "name": "pfx_warm_grou",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "pre-load the groups of PFX into cache",
+   "keys": [
+    "pre-load the groups of PFX into cache"
+   ]
+  },
+  {
+   "name": "dhcp_rank_entr",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "sort the entries of DHCP by load",
+   "keys": [
+    "sort the entries of DHCP by load"
+   ]
+  },
+  {
+   "name": "syslog_probe_coun",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the counters of SYSLOG",
+   "keys": [
+    "test reachability of the counters of SYSLOG"
+   ]
+  },
+  {
+   "name": "cfg_warm_pref",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "pre-load the prefixes of CFG into cache",
+   "keys": [
+    "pre-load the prefixes of CFG into cache"
+   ]
+  },
+  {
+   "name": "rt_probe_prof",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "test reachability of the profiles of RT",
+   "keys": [
+    "test reachability of the profiles of RT"
+   ]
+  },
+  {
+   "name": "oui_sweep",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "scan all devices for OUI prefixes",
+   "keys": [
+    "scan all devices for OUI prefixes"
+   ]
+  },
+  {
+   "name": "isis_peek_grou",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the groups of ISIS",
+   "keys": [
+    "read one entry from the groups of ISIS"
+   ]
+  },
+  {
+   "name": "vrf_list",
+   "signature": "(router: str) -> list[str]",
+   "doc": "list the VRF instances configured on a router",
+   "keys": [
+    "VRF instances"
+   ]
+  },
+  {
+   "name": "snmp_trace_leas",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "follow the path of the leases of SNMP",
+   "keys": [
+    "follow the path of the leases of SNMP"
+   ]
+  },
+  {
+   "name": "mac_purge_poli",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "remove stale policies from MAC",
+   "keys": [
+    "remove stale policies from MAC"
+   ]
+  },
+  {
+   "name": "pim_seal_leas",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "lock the leases of PIM against changes",
+   "keys": [
+    "lock the leases of PIM against changes"
+   ]
+  },
+  {
+   "name": "ipsec_purge",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "remove stale entries from IPSEC",
+   "keys": [
+    "remove stale entries from IPSEC"
+   ]
+  },
+  {
+   "name": "arp_drain",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "move traffic away from the ports of ARP",
+   "keys": [
+    "move traffic away from the ports of ARP"
+   ]
+  },
+  {
+   "name": "dhcp_seal_peer",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "lock the peers of DHCP against changes",
+   "keys": [
+    "lock the peers of DHCP against changes"
+   ]
+  },
+  {
+   "name": "ifx_merge_queu",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "combine duplicate queues of IFX",
+   "keys": [
+    "combine duplicate queues of IFX"
+   ]
+  },
+  {
+   "name": "vrrp_unfold",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "expand a compact VRRP zones spec into a full list",
+   "keys": [
+    "expand a compact VRRP zones spec into a full list"
+   ]
+  },
+  {
+   "name": "vrx_dump_rout",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "return the raw routes table of VRX",
+   "keys": [
+    "return the raw routes table of VRX"
+   ]
+  },
+  {
+   "name": "mac_sweep",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "scan all devices for MAC alarms",
+   "keys": [
+    "scan all devices for MAC alarms"
+   ]
+  },
+  {
+   "name": "dns_seal",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "lock the leases of DNS against changes",
+   "keys": [
+    "lock the leases of DNS against changes"
+   ]
+  },
+  {
+   "name": "isis_diff",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compare two snapshots of the policies of ISIS",
+   "keys": [
+    "compare two snapshots of the policies of ISIS"
+   ]
+  },
+  {
+   "name": "olt_tally",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "count the neighbors of OLT by state",
+   "keys": [
+    "count the neighbors of OLT by state"
+   ]
+  },
+  {
+   "name": "bgp_tally_queu",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "count the queues of BGP by state",
+   "keys": [
+    "count the queues of BGP by state"
+   ]
+  },
+  {
+   "name": "trk_unfold_inte",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "expand a compact TRK interfaces spec into a full list",
+   "keys": [
+    "expand a compact TRK interfaces spec into a full list"
+   ]
+  },
+  {
+   "name": "acl_pin_neig",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "make the neighbors of ACL static",
+   "keys": [
+    "make the neighbors of ACL static"
+   ]
+  },
+  {
+   "name": "lag_unfold",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "expand a compact LAG ports spec into a full list",
+   "keys": [
+    "expand a compact LAG ports spec into a full list"
+   ]
+  },
+  {
+   "name": "gpon_merge_grou",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "combine duplicate groups of GPON",
+   "keys": [
+    "combine duplicate groups of GPON"
+   ]
+  },
+  {
+   "name": "ntp_fold",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "compress the groups of NTP into a compact spec",
+   "keys": [
+    "compress the groups of NTP into a compact spec"
+   ]
+  },
+  {
+   "name": "ntp_pin",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "make the tunnels of NTP static",
+   "keys": [
+    "make the tunnels of NTP static"
+   ]
+  },
+  {
+   "name": "pfx_unfold",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "expand a compact PFX profiles spec into a full list",
+   "keys": [
+    "expand a compact PFX profiles spec into a full list"
+   ]
+  },
+  {
+   "name": "poe_carve",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "split the tunnels of POE into smaller blocks",
+   "keys": [
+    "split the tunnels of POE into smaller blocks"
+   ]
+  },
+  {
+   "name": "cfg_sweep",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "scan all devices for CFG entries",
+   "keys": [
+    "scan all devices for CFG entries"
+   ]
+  },
+  {
+   "name": "poe_budget",
+   "signature": "(switch: str) -> dict",
+   "doc": "return the PoE power budget and usage of a switch",
+   "keys": [
+    "PoE power budget",
+    "PoE budget"
+   ]
+  },
+  {
+   "name": "vxlan_unfold_inte",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "expand a compact VXLAN interfaces spec into a full list",
+   "keys": [
+    "expand a compact VXLAN interfaces spec into a full list"
+   ]
+  },
+  {
+   "name": "mpls_map_port",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "draw a map of the ports of MPLS",
+   "keys": [
+    "draw a map of the ports of MPLS"
+   ]
+  },
+  {
+   "name": "gpon_merge",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "combine duplicate tunnels of GPON",
+   "keys": [
+    "combine duplicate tunnels of GPON"
+   ]
+  },
+  {
+   "name": "qos_snap",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "take a snapshot of the tunnels of QOS",
+   "keys": [
+    "take a snapshot of the tunnels of QOS"
+   ]
+  },
+  {
+   "name": "mtu_snap",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "take a snapshot of the zones of MTU",
+   "keys": [
+    "take a snapshot of the zones of MTU"
+   ]
+  },
+  {
+   "name": "lag_scan",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "list the queues of LAG",
+   "keys": [
+    "list the queues of LAG"
+   ]
+  },
+  {
+   "name": "pfx_peek",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "read one entry from the tables of PFX",
+   "keys": [
+    "read one entry from the tables of PFX"
+   ]
+  },
+  {
+   "name": "mpls_trace",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "follow the path of the routes of MPLS",
+   "keys": [
+    "follow the path of the routes of MPLS"
+   ]
+  },
+  {
+   "name": "igmp_purge_alar",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "remove stale alarms from IGMP",
+   "keys": [
+    "remove stale alarms from IGMP"
+   ]
+  },
+  {
+   "name": "ipsec_rank",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "sort the counters of IPSEC by load",
+   "keys": [
+    "sort the counters of IPSEC by load"
+   ]
+  },
+  {
+   "name": "stp_drain",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "move traffic away from the tunnels of STP",
+   "keys": [
+    "move traffic away from the tunnels of STP"
+   ]
+  },
+  {
+   "name": "vrf_probe",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "test reachability of the timers of VRF",
+   "keys": [
+    "test reachability of the timers of VRF"
+   ]
+  },
+  {
+   "name": "mtu_snap_poli",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "take a snapshot of the policies of MTU",
+   "keys": [
+    "take a snapshot of the policies of MTU"
+   ]
+  },
+  {
+   "name": "vrx_diff",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "compare two snapshots of the policies of VRX",
+   "keys": [
+    "compare two snapshots of the policies of VRX"
+   ]
+  },
+  {
+   "name": "lacp_merge",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "combine duplicate zones of LACP",
+   "keys": [
+    "combine duplicate zones of LACP"
+   ]
+  },
+  {
+   "name": "arp_pin",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "make the leases of ARP static",
+   "keys": [
+    "make the leases of ARP static"
+   ]
+  },
+  {
+   "name": "trk_purge",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "remove stale prefixes from TRK",
+   "keys": [
+    "remove stale prefixes from TRK"
+   ]
+  },
+  {
+   "name": "bgp_sess",
+   "signature": "(router: str) -> list[dict]",
+   "doc": "return the BGP sessions and their states on a router",
+   "keys": [
+    "BGP sessions"
+   ]
+  },
+  {
+   "name": "vrrp_canon",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "normalize the names of the peers of VRRP",
+   "keys": [
+    "normalize the names of the peers of VRRP"
+   ]
+  },
+  {
+   "name": "ifx_canon",
+   "signature": "(name: str) -> str",
+   "doc": "normalize an interface name such as GE0/0/1 to its long form",
+   "keys": [
+    "interface name",
+    "long form"
+   ]
+  },
+  {
+   "name": "vrx_peek",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "read one entry from the routes of VRX",
+   "keys": [
+    "read one entry from the routes of VRX"
+   ]
+  },
+  {
+   "name": "trk_members",
+   "signature": "(device: str, trunk: str) -> list[str]",
+   "doc": "list the member ports of an Eth-Trunk",
+   "keys": [
+    "member ports",
+    "Eth-Trunk members"
+   ]
+  },
+  {
+   "name": "mtu_trace",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "follow the path of the tunnels of MTU",
+   "keys": [
+    "follow the path of the tunnels of MTU"
+   ]
+  },
+  {
+   "name": "mpls_lint_memb",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "validate the syntax of the MPLS members",
+   "keys": [
+    "validate the syntax of the MPLS members"
+   ]
+  },
+  {
+   "name": "poe_snap_memb",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "take a snapshot of the members of POE",
+   "keys": [
+    "take a snapshot of the members of POE"
+   ]
+  },
+  {
+   "name": "ont_warm_poli",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "pre-load the policies of ONT into cache",
+   "keys": [
+    "pre-load the policies of ONT into cache"
+   ]
+  },
+  {
+   "name": "mpls_dump_time",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "return the raw timers table of MPLS",
+   "keys": [
+    "return the raw timers table of MPLS"
+   ]
+  },
+  {
+   "name": "lacp_diff",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compare two snapshots of the timers of LACP",
+   "keys": [
+    "compare two snapshots of the timers of LACP"
+   ]
+  },
+  {
+   "name": "vxlan_dump_poli",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "return the raw policies table of VXLAN",
+   "keys": [
+    "return the raw policies table of VXLAN"
+   ]
+  },
+  {
+   "name": "nat_trace",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "follow the path of the neighbors of NAT",
+   "keys": [
+    "follow the path of the neighbors of NAT"
+   ]
+  },
+  {
+   "name": "rt_merge_pref",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "combine duplicate prefixes of RT",
+   "keys": [
+    "combine duplicate prefixes of RT"
+   ]
+  },
+  {
+   "name": "evpn_snap_port",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "take a snapshot of the ports of EVPN",
+   "keys": [
+    "take a snapshot of the ports of EVPN"
+   ]
+  },
+  {
+   "name": "evpn_warm_poli",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "pre-load the policies of EVPN into cache",
+   "keys": [
+    "pre-load the policies of EVPN into cache"
+   ]
+  },
+  {
+   "name": "mac_map_time",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "draw a map of the timers of MAC",
+   "keys": [
+    "draw a map of the timers of MAC"
+   ]
+  },
+  {
+   "name": "mac_snap",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "take a snapshot of the alarms of MAC",
+   "keys": [
+    "take a snapshot of the alarms of MAC"
+   ]
+  },
+  {
+   "name": "acl_drain_queu",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "move traffic away from the queues of ACL",
+   "keys": [
+    "move traffic away from the queues of ACL"
+   ]
+  },
+  {
+   "name": "ospf_purge_leas",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "remove stale leases from OSPF",
+   "keys": [
+    "remove stale leases from OSPF"
+   ]
+  },
+  {
+   "name": "acl_warm_neig",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "pre-load the neighbors of ACL into cache",
+   "keys": [
+    "pre-load the neighbors of ACL into cache"
+   ]
+  },
+  {
+   "name": "rt_lookup",
+   "signature": "(router: str, ip: str) -> dict",
+   "doc": "find the route a router uses to reach an IP address",
+   "keys": [
+    "route to reach",
+    "route lookup"
+   ]
+  },
+  {
+   "name": "vrx_unfold_pref",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "expand a compact VRX prefixes spec into a full list",
+   "keys": [
+    "expand a compact VRX prefixes spec into a full list"
+   ]
+  },
+  {
+   "name": "dhcp_peek_rout",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "read one entry from the routes of DHCP",
+   "keys": [
+    "read one entry from the routes of DHCP"
+   ]
+  },
+  {
+   "name": "fdb_carve",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "split the leases of FDB into smaller blocks",
+   "keys": [
+    "split the leases of FDB into smaller blocks"
+   ]
+  },
+  {
+   "name": "mtu_merge",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "combine duplicate queues of MTU",
+   "keys": [
+    "combine duplicate queues of MTU"
+   ]
+  },
+  {
+   "name": "mac_pin",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the ports of MAC static",
+   "keys": [
+    "make the ports of MAC static"
+   ]
+  },
+  {
+   "name": "vrx_merge",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "combine duplicate sessions of VRX",
+   "keys": [
+    "combine duplicate sessions of VRX"
+   ]
+  },
+  {
+   "name": "ntp_map",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "draw a map of the entries of NTP",
+   "keys": [
+    "draw a map of the entries of NTP"
+   ]
+  },
+  {
+   "name": "bfd_canon_coun",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "normalize the names of the counters of BFD",
+   "keys": [
+    "normalize the names of the counters of BFD"
+   ]
+  },
+  {
+   "name": "ospf_lint_time",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "validate the syntax of the OSPF timers",
+   "keys": [
+    "validate the syntax of the OSPF timers"
+   ]
+  },
+  {
+   "name": "sfp_sync_zone",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "copy the zones of SFP to the standby node",
+   "keys": [
+    "copy the zones of SFP to the standby node"
+   ]
+  },
+  {
+   "name": "rt_trace",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "follow the path of the prefixes of RT",
+   "keys": [
+    "follow the path of the prefixes of RT"
+   ]
+  },
+  {
+   "name": "sfp_ddm",
+   "signature": "(device: str, port: str) -> dict",
+   "doc": "read the digital diagnostics of an SFP transceiver",
+   "keys": [
+    "digital diagnostics",
+    "SFP transceiver"
+   ]
+  },
+  {
+   "name": "sfp_purge_leas",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "remove stale leases from SFP",
+   "keys": [
+    "remove stale leases from SFP"
+   ]
+  },
+  {
+   "name": "lldp_audit_memb",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "check the members of LLDP against policy",
+   "keys": [
+    "check the members of LLDP against policy"
+   ]
+  },
+  {
+   "name": "oui_warm_time",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "pre-load the timers of OUI into cache",
+   "keys": [
+    "pre-load the timers of OUI into cache"
+   ]
+  },
+  {
+   "name": "acl_lint",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "validate the syntax of the ACL tables",
+   "keys": [
+    "validate the syntax of the ACL tables"
+   ]
+  },
+  {
+   "name": "bfd_sync_zone",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "copy the zones of BFD to the standby node",
+   "keys": [
+    "copy the zones of BFD to the standby node"
+   ]
+  },
+  {
+   "name": "cfg_rank_entr",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "sort the entries of CFG by load",
+   "keys": [
+    "sort the entries of CFG by load"
+   ]
+  },
+  {
+   "name": "fdb_audit_prof",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "check the profiles of FDB against policy",
+   "keys": [
+    "check the profiles of FDB against policy"
+   ]
+  },
+  {
+   "name": "qos_sync_tabl",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "copy the tables of QOS to the standby node",
+   "keys": [
+    "copy the tables of QOS to the standby node"
+   ]
+  },
+  {
+   "name": "rt_probe",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "test reachability of the zones of RT",
+   "keys": [
+    "test reachability of the zones of RT"
+   ]
+  },
+  {
+   "name": "pfx_purge_poli",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "remove stale policies from PFX",
+   "keys": [
+    "remove stale policies from PFX"
+   ]
+  },
+  {
+   "name": "gpon_trace_poli",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "follow the path of the policies of GPON",
+   "keys": [
+    "follow the path of the policies of GPON"
+   ]
+  },
+  {
+   "name": "arp_probe_prof",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "test reachability of the profiles of ARP",
+   "keys": [
+    "test reachability of the profiles of ARP"
+   ]
+  },
+  {
+   "name": "dhcp_peek",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "read one entry from the tables of DHCP",
+   "keys": [
+    "read one entry from the tables of DHCP"
+   ]
+  },
+  {
+   "name": "nat_sync",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "copy the peers of NAT to the standby node",
+   "keys": [
+    "copy the peers of NAT to the standby node"
+   ]
+  },
+  {
+   "name": "mtu_scan_pref",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "list the prefixes of MTU",
+   "keys": [
+    "list the prefixes of MTU"
+   ]
+  },
+  {
+   "name": "acl_rank_rout",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "sort the routes of ACL by load",
+   "keys": [
+    "sort the routes of ACL by load"
+   ]
+  },
+  {
+   "name": "poe_drain",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "move traffic away from the groups of POE",
+   "keys": [
+    "move traffic away from the groups of POE"
+   ]
+  },
+  {
+   "name": "mac_canon",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "normalize the names of the routes of MAC",
+   "keys": [
+    "normalize the names of the routes of MAC"
+   ]
+  },
+  {
+   "name": "lag_lint",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "validate the syntax of the LAG neighbors",
+   "keys": [
+    "validate the syntax of the LAG neighbors"
+   ]
+  },
+  {
+   "name": "igmp_peek",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "read one entry from the sessions of IGMP",
+   "keys": [
+    "read one entry from the sessions of IGMP"
+   ]
+  },
+  {
+   "name": "ont_carve",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "split the routes of ONT into smaller blocks",
+   "keys": [
+    "split the routes of ONT into smaller blocks"
+   ]
+  },
+  {
+   "name": "evpn_rank",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "sort the timers of EVPN by load",
+   "keys": [
+    "sort the timers of EVPN by load"
+   ]
+  },
+  {
+   "name": "fdb_peek_coun",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "read one entry from the counters of FDB",
+   "keys": [
+    "read one entry from the counters of FDB"
+   ]
+  },
+  {
+   "name": "evpn_dump_prof",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "return the raw profiles table of EVPN",
+   "keys": [
+    "return the raw profiles table of EVPN"
+   ]
+  },
+  {
+   "name": "sfp_tally",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "count the sessions of SFP by state",
+   "keys": [
+    "count the sessions of SFP by state"
+   ]
+  },
+  {
+   "name": "acl_hits",
+   "signature": "(device: str, acl: str) -> dict[int, int]",
+   "doc": "return the hit counters of each rule in an ACL",
+   "keys": [
+    "hit counters",
+    "ACL rule hits"
+   ]
+  },
+  {
+   "name": "vrx_scan",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "list the ports of VRX",
+   "keys": [
+    "list the ports of VRX"
+   ]
+  },
+  {
+   "name": "vrf_sync_tunn",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "copy the tunnels of VRF to the standby node",
+   "keys": [
+    "copy the tunnels of VRF to the standby node"
+   ]
+  },
+  {
+   "name": "evpn_warm_queu",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "pre-load the queues of EVPN into cache",
+   "keys": [
+    "pre-load the queues of EVPN into cache"
+   ]
+  },
+  {
+   "name": "acl_sweep_grou",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "scan all devices for ACL groups",
+   "keys": [
+    "scan all devices for ACL groups"
+   ]
+  },
+  {
+   "name": "ntp_unfold_prof",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "expand a compact NTP profiles spec into a full list",
+   "keys": [
+    "expand a compact NTP profiles spec into a full list"
+   ]
+  },
+  {
+   "name": "fdb_sweep_tabl",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "scan all devices for FDB tables",
+   "keys": [
+    "scan all devices for FDB tables"
+   ]
+  },
+  {
+   "name": "cfg_sync",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "copy the policies of CFG to the standby node",
+   "keys": [
+    "copy the policies of CFG to the standby node"
+   ]
+  },
+  {
+   "name": "lacp_lint_poli",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "validate the syntax of the LACP policies",
+   "keys": [
+    "validate the syntax of the LACP policies"
+   ]
+  },
+  {
+   "name": "olt_seal_inte",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "lock the interfaces of OLT against changes",
+   "keys": [
+    "lock the interfaces of OLT against changes"
+   ]
+  },
+  {
+   "name": "olt_purge",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "remove stale tables from OLT",
+   "keys": [
+    "remove stale tables from OLT"
+   ]
+  },
+  {
+   "name": "nat_purge",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "remove stale peers from NAT",
+   "keys": [
+    "remove stale peers from NAT"
+   ]
+  },
+  {
+   "name": "trk_map",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "draw a map of the leases of TRK",
+   "keys": [
+    "draw a map of the leases of TRK"
+   ]
+  },
+  {
+   "name": "dhcp_peek_zone",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "read one entry from the zones of DHCP",
+   "keys": [
+    "read one entry from the zones of DHCP"
+   ]
+  },
+  {
+   "name": "vrx_warm",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "pre-load the interfaces of VRX into cache",
+   "keys": [
+    "pre-load the interfaces of VRX into cache"
+   ]
+  },
+  {
+   "name": "fdb_fold_rout",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compress the routes of FDB into a compact spec",
+   "keys": [
+    "compress the routes of FDB into a compact spec"
+   ]
+  },
+  {
+   "name": "stp_pin",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the interfaces of STP static",
+   "keys": [
+    "make the interfaces of STP static"
+   ]
+  },
+  {
+   "name": "sfp_probe_time",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the timers of SFP",
+   "keys": [
+    "test reachability of the timers of SFP"
+   ]
+  },
+  {
+   "name": "poe_probe_poli",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the policies of POE",
+   "keys": [
+    "test reachability of the policies of POE"
+   ]
+  },
+  {
+   "name": "trk_canon",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "normalize the names of the entries of TRK",
+   "keys": [
+    "normalize the names of the entries of TRK"
+   ]
+  },
+  {
+   "name": "vrrp_warm",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "pre-load the queues of VRRP into cache",
+   "keys": [
+    "pre-load the queues of VRRP into cache"
+   ]
+  },
+  {
+   "name": "snmp_dump",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "return the raw prefixes table of SNMP",
+   "keys": [
+    "return the raw prefixes table of SNMP"
+   ]
+  },
+  {
+   "name": "isis_tally_zone",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "count the zones of ISIS by state",
+   "keys": [
+    "count the zones of ISIS by state"
+   ]
+  },
+  {
+   "name": "cfg_pin_grou",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "make the groups of CFG static",
+   "keys": [
+    "make the groups of CFG static"
+   ]
+  },
+  {
+   "name": "sfp_pin",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the groups of SFP static",
+   "keys": [
+    "make the groups of SFP static"
+   ]
+  },
+  {
+   "name": "igmp_drain",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "move traffic away from the ports of IGMP",
+   "keys": [
+    "move traffic away from the ports of IGMP"
+   ]
+  },
+  {
+   "name": "vrf_tally_poli",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "count the policies of VRF by state",
+   "keys": [
+    "count the policies of VRF by state"
+   ]
+  },
+  {
+   "name": "vxlan_peek_coun",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "read one entry from the counters of VXLAN",
+   "keys": [
+    "read one entry from the counters of VXLAN"
+   ]
+  },
+  {
+   "name": "dns_probe_port",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "test reachability of the ports of DNS",
+   "keys": [
+    "test reachability of the ports of DNS"
+   ]
+  },
+  {
+   "name": "olt_unfold_zone",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "expand a compact OLT zones spec into a full list",
+   "keys": [
+    "expand a compact OLT zones spec into a full list"
+   ]
+  },
+  {
+   "name": "vxlan_seal",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "lock the members of VXLAN against changes",
+   "keys": [
+    "lock the members of VXLAN against changes"
+   ]
+  },
+  {
+   "name": "mpls_sync",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "copy the routes of MPLS to the standby node",
+   "keys": [
+    "copy the routes of MPLS to the standby node"
+   ]
+  },
+  {
+   "name": "poe_trace",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "follow the path of the zones of POE",
+   "keys": [
+    "follow the path of the zones of POE"
+   ]
+  },
+  {
+   "name": "ifx_probe",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "test reachability of the groups of IFX",
+   "keys": [
+    "test reachability of the groups of IFX"
+   ]
+  },
+  {
+   "name": "gpon_dump_neig",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "return the raw neighbors table of GPON",
+   "keys": [
+    "return the raw neighbors table of GPON"
+   ]
+  },
+  {
+   "name": "poe_warm",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "pre-load the tunnels of POE into cache",
+   "keys": [
+    "pre-load the tunnels of POE into cache"
+   ]
+  },
+  {
+   "name": "snmp_map_entr",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "draw a map of the entries of SNMP",
+   "keys": [
+    "draw a map of the entries of SNMP"
+   ]
+  },
+  {
+   "name": "qos_carve",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "split the queues of QOS into smaller blocks",
+   "keys": [
+    "split the queues of QOS into smaller blocks"
+   ]
+  },
+  {
+   "name": "lacp_unfold_queu",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "expand a compact LACP queues spec into a full list",
+   "keys": [
+    "expand a compact LACP queues spec into a full list"
+   ]
+  },
+  {
+   "name": "poe_scan",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "list the interfaces of POE",
+   "keys": [
+    "list the interfaces of POE"
+   ]
+  },
+  {
+   "name": "mac_carve_poli",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "split the policies of MAC into smaller blocks",
+   "keys": [
+    "split the policies of MAC into smaller blocks"
+   ]
+  },
+  {
+   "name": "vrx_unfold",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "expand a VLAN range spec like '100 to 110 200' into VLAN ids",
+   "keys": [
+    "VLAN range spec",
+    "VLAN ranges"
+   ]
+  },
+  {
+   "name": "cfg_diff",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "produce a unified diff between two device configurations",
+   "keys": [
+    "diff between two configurations",
+    "configuration diff"
+   ]
+  },
+  {
+   "name": "lldp_sync",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "copy the tunnels of LLDP to the standby node",
+   "keys": [
+    "copy the tunnels of LLDP to the standby node"
+   ]
+  },
+  {
+   "name": "fdb_seal_prof",
+   "signature": "(switch: str, vlan: int) -> list[str]",
+   "doc": "lock the profiles of FDB against changes",
+   "keys": [
+    "lock the profiles of FDB against changes"
+   ]
+  },
+  {
+   "name": "bgp_pin_port",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "make the ports of BGP static",
+   "keys": [
+    "make the ports of BGP static"
+   ]
+  },
+  {
+   "name": "nat_fold",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "compress the policies of NAT into a compact spec",
+   "keys": [
+    "compress the policies of NAT into a compact spec"
+   ]
+  },
+  {
+   "name": "mac_unfold",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "expand a compact MAC neighbors spec into a full list",
+   "keys": [
+    "expand a compact MAC neighbors spec into a full list"
+   ]
+  },
+  {
+   "name": "ospf_scan_prof",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "list the profiles of OSPF",
+   "keys": [
+    "list the profiles of OSPF"
+   ]
+  },
+  {
+   "name": "sfp_canon",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "normalize the names of the tunnels of SFP",
+   "keys": [
+    "normalize the names of the tunnels of SFP"
+   ]
+  },
+  {
+   "name": "igmp_probe",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "test reachability of the interfaces of IGMP",
+   "keys": [
+    "test reachability of the interfaces of IGMP"
+   ]
+  },
+  {
+   "name": "trk_sync_time",
+   "signature": "(device: str, name: str) -> dict",
+   "doc": "copy the timers of TRK to the standby node",
+   "keys": [
+    "copy the timers of TRK to the standby node"
+   ]
+  },
+  {
+   "name": "dhcp_warm_port",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "pre-load the ports of DHCP into cache",
+   "keys": [
+    "pre-load the ports of DHCP into cache"
+   ]
+  },
+  {
+   "name": "vrf_sweep_memb",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "scan all devices for VRF members",
+   "keys": [
+    "scan all devices for VRF members"
+   ]
+  },
+  {
+   "name": "cfg_merge_grou",
+   "signature": "(spec: str) -> list[int]",
+   "doc": "combine duplicate groups of CFG",
+   "keys": [
+    "combine duplicate groups of CFG"
+   ]
+  },
+  {
+   "name": "ipsec_sync",
+   "signature": "(host: str, timeout: float = 2.0) -> bool",
+   "doc": "copy the ports of IPSEC to the standby node",
+   "keys": [
+    "copy the ports of IPSEC to the standby node"
+   ]
+  },
+  {
+   "name": "acl_seal_poli",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "lock the policies of ACL against changes",
+   "keys": [
+    "lock the policies of ACL against changes"
+   ]
+  },
+  {
+   "name": "gpon_fold",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "compress the counters of GPON into a compact spec",
+   "keys": [
+    "compress the counters of GPON into a compact spec"
+   ]
+  },
+  {
+   "name": "stp_sync_time",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "copy the timers of STP to the standby node",
+   "keys": [
+    "copy the timers of STP to the standby node"
+   ]
+  },
+  {
+   "name": "stp_lint",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "validate the syntax of the STP routes",
+   "keys": [
+    "validate the syntax of the STP routes"
+   ]
+  },
+  {
+   "name": "ifx_dump",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "return the raw alarms table of IFX",
+   "keys": [
+    "return the raw alarms table of IFX"
+   ]
+  },
+  {
+   "name": "ifx_trace_port",
+   "signature": "(device: str) -> list[dict]",
+   "doc": "follow the path of the ports of IFX",
+   "keys": [
+    "follow the path of the ports of IFX"
+   ]
+  },
+  {
+   "name": "lag_sync",
+   "signature": "(router: str) -> dict[str, int]",
+   "doc": "copy the peers of LAG to the standby node",
+   "keys": [
+    "copy the peers of LAG to the standby node"
+   ]
+  },
+  {
+   "name": "cfg_unfold",
+   "signature": "(olt: str, onu_id: int) -> dict",
+   "doc": "expand a compact CFG groups spec into a full list",
+   "keys": [
+    "expand a compact CFG groups spec into a full list"
+   ]
+  },
+  {
+   "name": "trk_sweep_poli",
+   "signature": "(old: str, new: str) -> str",
+   "doc": "scan all devices for TRK policies",
+   "keys": [
+    "scan all devices for TRK policies"
+   ]
+  }
+ ]
+}

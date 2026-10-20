@@ -1,0 +1,1509 @@
+{
+ "summary": {
+  "bare": {
+   "exact_match": 0.0,
+   "invented": 1.0,
+   "ttft_s": 0.074518525,
+   "prompt_n": 23.225
+  },
+  "rag": {
+   "exact_match": 0.075,
+   "invented": 0.075,
+   "ttft_s": 9.396616475,
+   "prompt_n": 14692.225
+  },
+  "kvpack": {
+   "exact_match": 0.1,
+   "invented": 0.05,
+   "ttft_s": 0.3404348036470216,
+   "prompt_n": 19.225
+  },
+  "kvpack_identical_to_rag": 32,
+  "n": 40,
+  "reference_tokens": 14673,
+  "package_gb": 0.4139134,
+  "compile_s": 9.234352460014634
+ },
+ "rows": [
+  {
+   "symbol": "vrx_unfold",
+   "task": "turn the VLAN range spec \"100 to 110 200\" into a list of VLAN ids",
+   "bare": {
+    "predicted": "vidrange",
+    "exact": false,
+    "invented": true,
+    "content": "vidrange(\"100 to 110 ",
+    "prompt_n": 36,
+    "prompt_s": 0.078594,
+    "restore_s": 0.0,
+    "ttft_s": 0.078594,
+    "wall_s": 0.3623735789442435
+   },
+   "rag": {
+    "predicted": "ont_trace_pref",
+    "exact": false,
+    "invented": false,
+    "content": "ont_trace_pref(\"100 to 110",
+    "prompt_n": 14705,
+    "prompt_s": 9.325308999999999,
+    "restore_s": 0.0,
+    "ttft_s": 9.325308999999999,
+    "wall_s": 9.634896049974486
+   },
+   "kvpack": {
+    "predicted": "ont_trace_pref",
+    "exact": false,
+    "invented": false,
+    "content": "ont_trace_pref(\"100 to 110",
+    "prompt_n": 32,
+    "prompt_s": 0.10461,
+    "restore_s": 0.22535620094276965,
+    "ttft_s": 0.3299662009427696,
+    "wall_s": 0.6380910959560424
+   }
+  },
+  {
+   "symbol": "vrx_unfold",
+   "task": "expand the VLAN ranges allowed on the trunk into individual ids",
+   "bare": {
+    "predicted": "ports",
+    "exact": false,
+    "invented": true,
+    "content": "ports.expand_range(1, 100)\n",
+    "prompt_n": 22,
+    "prompt_s": 0.073487,
+    "restore_s": 0.0,
+    "ttft_s": 0.073487,
+    "wall_s": 0.35197824996430427
+   },
+   "rag": {
+    "predicted": "ont_vlans",
+    "exact": false,
+    "invented": true,
+    "content": "ont_vlans(\"100 to 11",
+    "prompt_n": 14691,
+    "prompt_s": 9.304692,
+    "restore_s": 0.0,
+    "ttft_s": 9.304692,
+    "wall_s": 9.620999519946054
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"core-01\")\nprint(result",
+    "prompt_n": 18,
+    "prompt_s": 0.09794499999999999,
+    "restore_s": 0.22193332703318447,
+    "ttft_s": 0.3198783270331845,
+    "wall_s": 0.6330014220438898
+   }
+  },
+  {
+   "symbol": "lldp_scan",
+   "task": "get the LLDP neighbors of the core switch",
+   "bare": {
+    "predicted": "arping",
+    "exact": false,
+    "invented": true,
+    "content": "arping(\"core\", \"10.0.0",
+    "prompt_n": 20,
+    "prompt_s": 0.071794,
+    "restore_s": 0.0,
+    "ttft_s": 0.071794,
+    "wall_s": 0.3531038109213114
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(device=\"core1\")\nprint(result)",
+    "prompt_n": 14689,
+    "prompt_s": 9.386584000000001,
+    "restore_s": 0.0,
+    "ttft_s": 9.386584000000001,
+    "wall_s": 9.708783047972247
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(device=\"core1\")\nprint(result)",
+    "prompt_n": 16,
+    "prompt_s": 0.097527,
+    "restore_s": 0.21909905294887722,
+    "ttft_s": 0.31662605294887725,
+    "wall_s": 0.6394169100094587
+   }
+  },
+  {
+   "symbol": "lldp_scan",
+   "task": "list every LLDP neighbors entry seen by sw-access-01",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl(\"show lldp neighbors\")\nprint(result)",
+    "prompt_n": 24,
+    "prompt_s": 0.07628499999999999,
+    "restore_s": 0.0,
+    "ttft_s": 0.07628499999999999,
+    "wall_s": 0.3693300570594147
+   },
+   "rag": {
+    "predicted": "igmp_scan_zone",
+    "exact": false,
+    "invented": false,
+    "content": "igmp_scan_zone(\"sw-access-01\")\n",
+    "prompt_n": 14693,
+    "prompt_s": 9.561223,
+    "restore_s": 0.0,
+    "ttft_s": 9.561223,
+    "wall_s": 9.943277843063697
+   },
+   "kvpack": {
+    "predicted": "igmp_scan_zone",
+    "exact": false,
+    "invented": false,
+    "content": "igmp_scan_zone(\"sw-access-01\")\n",
+    "prompt_n": 20,
+    "prompt_s": 0.098803,
+    "restore_s": 0.22277541097719222,
+    "ttft_s": 0.3215784109771922,
+    "wall_s": 0.6367060489719734
+   }
+  },
+  {
+   "symbol": "oui_owner",
+   "task": "find the vendor of the MAC 00:1a:2b:3c:4d:5e",
+   "bare": {
+    "predicted": "whois",
+    "exact": false,
+    "invented": true,
+    "content": "whois(\"00:1a:2b:",
+    "prompt_n": 35,
+    "prompt_s": 0.081194,
+    "restore_s": 0.0,
+    "ttft_s": 0.081194,
+    "wall_s": 0.3722606800729409
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"10.0.0.1\",",
+    "prompt_n": 14704,
+    "prompt_s": 9.696816,
+    "restore_s": 0.0,
+    "ttft_s": 9.696816,
+    "wall_s": 10.017715275054798
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"10.0.0.1\",",
+    "prompt_n": 31,
+    "prompt_s": 0.10601999999999999,
+    "restore_s": 0.2292323070578277,
+    "ttft_s": 0.3352523070578277,
+    "wall_s": 0.6538093179697171
+   }
+  },
+  {
+   "symbol": "oui_owner",
+   "task": "look up the MAC vendor for the unknown device",
+   "bare": {
+    "predicted": "whois",
+    "exact": false,
+    "invented": true,
+    "content": "whois(\"00:11:24:",
+    "prompt_n": 20,
+    "prompt_s": 0.074011,
+    "restore_s": 0.0,
+    "ttft_s": 0.074011,
+    "wall_s": 0.36601010395679623
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 14689,
+    "prompt_s": 9.447154000000001,
+    "restore_s": 0.0,
+    "ttft_s": 9.447154000000001,
+    "wall_s": 9.76469007099513
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 16,
+    "prompt_s": 0.099334,
+    "restore_s": 0.2511417269706726,
+    "ttft_s": 0.35047572697067264,
+    "wall_s": 0.6704638530500233
+   }
+  },
+  {
+   "symbol": "pfx_carve",
+   "task": "split the prefix 10.0.0.0/22 into /24 networks",
+   "bare": {
+    "predicted": "rip",
+    "exact": false,
+    "invented": true,
+    "content": "rip.split(\"10.0.0.0/",
+    "prompt_n": 31,
+    "prompt_s": 0.080875,
+    "restore_s": 0.0,
+    "ttft_s": 0.080875,
+    "wall_s": 0.36760450794827193
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"r1\")\nprint(result)\n\n",
+    "prompt_n": 14700,
+    "prompt_s": 9.468579,
+    "restore_s": 0.0,
+    "ttft_s": 9.468579,
+    "wall_s": 9.791012609028257
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"r1\")\nprint(result)\n\n",
+    "prompt_n": 27,
+    "prompt_s": 0.10638800000000001,
+    "restore_s": 0.3481392490211874,
+    "ttft_s": 0.45452724902118746,
+    "wall_s": 0.7671200450276956
+   }
+  },
+  {
+   "symbol": "pfx_carve",
+   "task": "break 192.168.0.0/16 into subnets of length 20",
+   "bare": {
+    "predicted": "rip2",
+    "exact": false,
+    "invented": true,
+    "content": "rip2.subnet(\"192.168",
+    "prompt_n": 35,
+    "prompt_s": 0.07869499999999999,
+    "restore_s": 0.0,
+    "ttft_s": 0.07869499999999999,
+    "wall_s": 0.36840724805369973
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"r1\")\nprint(result)\n\n",
+    "prompt_n": 14704,
+    "prompt_s": 9.469736000000001,
+    "restore_s": 0.0,
+    "ttft_s": 9.469736000000001,
+    "wall_s": 9.79387954401318
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"r1\")\nprint(result)\n\n",
+    "prompt_n": 31,
+    "prompt_s": 0.107121,
+    "restore_s": 0.23837444500532,
+    "ttft_s": 0.34549544500532003,
+    "wall_s": 0.6545798609731719
+   }
+  },
+  {
+   "symbol": "ifx_canon",
+   "task": "convert the interface name GE0/0/1 to the full name",
+   "bare": {
+    "predicted": "INTERFACE_NAME_TO_FULL_NAME",
+    "exact": false,
+    "invented": true,
+    "content": "INTERFACE_NAME_TO_FULL_NAME(\"GE0/0/1",
+    "prompt_n": 25,
+    "prompt_s": 0.074372,
+    "restore_s": 0.0,
+    "ttft_s": 0.074372,
+    "wall_s": 0.36892420903313905
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"GE0/0/1\", \"GE",
+    "prompt_n": 14694,
+    "prompt_s": 9.456612999999999,
+    "restore_s": 0.0,
+    "ttft_s": 9.456612999999999,
+    "wall_s": 9.780275354045443
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"GE0/0/1\", \"GE",
+    "prompt_n": 21,
+    "prompt_s": 0.106297,
+    "restore_s": 0.2386159369489178,
+    "ttft_s": 0.3449129369489178,
+    "wall_s": 0.6669681409839541
+   }
+  },
+  {
+   "symbol": "ifx_canon",
+   "task": "rewrite XGE1/0/3 in its long form",
+   "bare": {
+    "predicted": "aliases",
+    "exact": false,
+    "invented": true,
+    "content": "aliases('XGE1/0/3', 'X",
+    "prompt_n": 23,
+    "prompt_s": 0.076392,
+    "restore_s": 0.0,
+    "ttft_s": 0.076392,
+    "wall_s": 0.3679804179118946
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(old=\"XGE1/0/3",
+    "prompt_n": 14692,
+    "prompt_s": 9.513264999999999,
+    "restore_s": 0.0,
+    "ttft_s": 9.513264999999999,
+    "wall_s": 9.824923557927832
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(old=\"XGE1/0/3",
+    "prompt_n": 19,
+    "prompt_s": 0.098454,
+    "restore_s": 0.2268635560758412,
+    "ttft_s": 0.3253175560758412,
+    "wall_s": 0.6340212600771338
+   }
+  },
+  {
+   "symbol": "bgp_sess",
+   "task": "show the BGP sessions on the border router",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl(\"show ip bgp summary\")\nprint(result)",
+    "prompt_n": 20,
+    "prompt_s": 0.071222,
+    "restore_s": 0.0,
+    "ttft_s": 0.071222,
+    "wall_s": 0.3500179110560566
+   },
+   "rag": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(device=\"border\")\nprint(result)\n\n#",
+    "prompt_n": 14689,
+    "prompt_s": 9.463008,
+    "restore_s": 0.0,
+    "ttft_s": 9.463008,
+    "wall_s": 9.784427903941832
+   },
+   "kvpack": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(device=\"border\")\nprint(result)\n\n#",
+    "prompt_n": 16,
+    "prompt_s": 0.098892,
+    "restore_s": 0.24105033103842288,
+    "ttft_s": 0.33994233103842286,
+    "wall_s": 0.6483433380490169
+   }
+  },
+  {
+   "symbol": "bgp_sess",
+   "task": "check which BGP sessions are down on pe-01",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl(\"pe-01\", \"show bgp neighbor",
+    "prompt_n": 23,
+    "prompt_s": 0.073535,
+    "restore_s": 0.0,
+    "ttft_s": 0.073535,
+    "wall_s": 0.36749939899891615
+   },
+   "rag": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(\"pe-01\")\nprint(result)",
+    "prompt_n": 14692,
+    "prompt_s": 9.587936,
+    "restore_s": 0.0,
+    "ttft_s": 9.587936,
+    "wall_s": 9.92032100702636
+   },
+   "kvpack": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(\"pe-01\")\nprint(result)",
+    "prompt_n": 19,
+    "prompt_s": 0.104823,
+    "restore_s": 0.23005167802330106,
+    "ttft_s": 0.33487467802330106,
+    "wall_s": 0.6681665340438485
+   }
+  },
+  {
+   "symbol": "ont_rx",
+   "task": "measure the optical receive power of ONU 12 on olt-3",
+   "bare": {
+    "predicted": "ont",
+    "exact": false,
+    "invented": true,
+    "content": "ont.get_optical_power(\n    olt=\"olt",
+    "prompt_n": 26,
+    "prompt_s": 0.074787,
+    "restore_s": 0.0,
+    "ttft_s": 0.074787,
+    "wall_s": 0.36792662099469453
+   },
+   "rag": {
+    "predicted": "ont_rx",
+    "exact": true,
+    "invented": false,
+    "content": "ont_rx(\"olt-3\", 12)\n",
+    "prompt_n": 14695,
+    "prompt_s": 9.325346,
+    "restore_s": 0.0,
+    "ttft_s": 9.325346,
+    "wall_s": 9.635852516046725
+   },
+   "kvpack": {
+    "predicted": "ont_rx",
+    "exact": true,
+    "invented": false,
+    "content": "ont_rx(\"olt-3\", 12)\n",
+    "prompt_n": 22,
+    "prompt_s": 0.10271599999999999,
+    "restore_s": 0.227436366956681,
+    "ttft_s": 0.330152366956681,
+    "wall_s": 0.6399525399319828
+   }
+  },
+  {
+   "symbol": "ont_rx",
+   "task": "get the receive power of the ONU 7 on the north OLT",
+   "bare": {
+    "predicted": "ont",
+    "exact": false,
+    "invented": true,
+    "content": "ont.get_ont_power(ont_id=7, o",
+    "prompt_n": 25,
+    "prompt_s": 0.074047,
+    "restore_s": 0.0,
+    "ttft_s": 0.074047,
+    "wall_s": 0.3538077579578385
+   },
+   "rag": {
+    "predicted": "ont_rx",
+    "exact": true,
+    "invented": false,
+    "content": "ont_rx(\"north-olt\", 7)\nprint",
+    "prompt_n": 14694,
+    "prompt_s": 9.23343,
+    "restore_s": 0.0,
+    "ttft_s": 9.23343,
+    "wall_s": 9.54296583798714
+   },
+   "kvpack": {
+    "predicted": "ont_rx",
+    "exact": true,
+    "invented": false,
+    "content": "ont_rx(\"north-olt\", 7)\nprint",
+    "prompt_n": 21,
+    "prompt_s": 0.102395,
+    "restore_s": 0.22307921189349145,
+    "ttft_s": 0.32547421189349146,
+    "wall_s": 0.6332138738362119
+   }
+  },
+  {
+   "symbol": "cfg_diff",
+   "task": "compute the diff between two configurations of the router",
+   "bare": {
+    "predicted": "roc",
+    "exact": false,
+    "invented": true,
+    "content": "roc.diff(\n    netkit.roc.load(\"config",
+    "prompt_n": 20,
+    "prompt_s": 0.07093300000000001,
+    "restore_s": 0.0,
+    "ttft_s": 0.07093300000000001,
+    "wall_s": 0.34953405207488686
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"config1\", \"config2\")\nprint",
+    "prompt_n": 14689,
+    "prompt_s": 9.36945,
+    "restore_s": 0.0,
+    "ttft_s": 9.36945,
+    "wall_s": 9.681568189989775
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"config1\", \"config2\")\nprint",
+    "prompt_n": 16,
+    "prompt_s": 0.100596,
+    "restore_s": 0.22736186697147787,
+    "ttft_s": 0.3279578669714779,
+    "wall_s": 0.6532993419095874
+   }
+  },
+  {
+   "symbol": "cfg_diff",
+   "task": "build a configuration diff for yesterday and today backups",
+   "bare": {
+    "predicted": "ansible",
+    "exact": false,
+    "invented": true,
+    "content": "ansible.diff(\n    \"netkit\",\n    \"",
+    "prompt_n": 20,
+    "prompt_s": 0.076023,
+    "restore_s": 0.0,
+    "ttft_s": 0.076023,
+    "wall_s": 0.3696101719979197
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"yesterday\", new=\"today\")\n",
+    "prompt_n": 14689,
+    "prompt_s": 9.360489,
+    "restore_s": 0.0,
+    "ttft_s": 9.360489,
+    "wall_s": 9.666772125987336
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"yesterday\", new=\"today\")\n",
+    "prompt_n": 16,
+    "prompt_s": 0.098033,
+    "restore_s": 0.22681434301193804,
+    "ttft_s": 0.324847343011938,
+    "wall_s": 0.6301001840038225
+   }
+  },
+  {
+   "symbol": "arp_dump",
+   "task": "fetch the ARP table of the gateway",
+   "bare": {
+    "predicted": "arp_table",
+    "exact": false,
+    "invented": true,
+    "content": "arp_table(netkit.gateway_ip())\nprint(result)\n\n",
+    "prompt_n": 18,
+    "prompt_s": 0.07089100000000001,
+    "restore_s": 0.0,
+    "ttft_s": 0.07089100000000001,
+    "wall_s": 0.3470396460033953
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 14687,
+    "prompt_s": 9.459881,
+    "restore_s": 0.0,
+    "ttft_s": 9.459881,
+    "wall_s": 9.795216829050332
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 14,
+    "prompt_s": 0.09889,
+    "restore_s": 0.23266448499634862,
+    "ttft_s": 0.33155448499634865,
+    "wall_s": 0.6476462380960584
+   }
+  },
+  {
+   "symbol": "arp_dump",
+   "task": "dump the ARP table so we can map IPs to MACs",
+   "bare": {
+    "predicted": "arp_table",
+    "exact": false,
+    "invented": true,
+    "content": "arp_table()\nprint(result)\n\n# dump the routing",
+    "prompt_n": 23,
+    "prompt_s": 0.074429,
+    "restore_s": 0.0,
+    "ttft_s": 0.074429,
+    "wall_s": 0.3563057619612664
+   },
+   "rag": {
+    "predicted": "arp_dump",
+    "exact": true,
+    "invented": false,
+    "content": "arp_dump(\"10.0.0.1\")",
+    "prompt_n": 14692,
+    "prompt_s": 9.523777,
+    "restore_s": 0.0,
+    "ttft_s": 9.523777,
+    "wall_s": 9.84286503889598
+   },
+   "kvpack": {
+    "predicted": "arp_dump",
+    "exact": true,
+    "invented": false,
+    "content": "arp_dump(\"10.0.0.1\")",
+    "prompt_n": 19,
+    "prompt_s": 0.09973399999999999,
+    "restore_s": 0.22718309401534498,
+    "ttft_s": 0.32691709401534497,
+    "wall_s": 0.6427774769254029
+   }
+  },
+  {
+   "symbol": "mtu_probe",
+   "task": "discover the path MTU to 8.8.8.8",
+   "bare": {
+    "predicted": "arping",
+    "exact": false,
+    "invented": true,
+    "content": "arping(\"8.8.8.8\", count",
+    "prompt_n": 25,
+    "prompt_s": 0.075392,
+    "restore_s": 0.0,
+    "ttft_s": 0.075392,
+    "wall_s": 0.36059960594866425
+   },
+   "rag": {
+    "predicted": "ont_rx",
+    "exact": false,
+    "invented": false,
+    "content": "ont_rx(\"OLT1\", 1)\nprint(result",
+    "prompt_n": 14694,
+    "prompt_s": 9.381185,
+    "restore_s": 0.0,
+    "ttft_s": 9.381185,
+    "wall_s": 9.68899989896454
+   },
+   "kvpack": {
+    "predicted": "ont_probe_port",
+    "exact": false,
+    "invented": false,
+    "content": "ont_probe_port(\"192.168.",
+    "prompt_n": 21,
+    "prompt_s": 0.101339,
+    "restore_s": 0.22720098495483398,
+    "ttft_s": 0.328539984954834,
+    "wall_s": 0.6351493640104309
+   }
+  },
+  {
+   "symbol": "mtu_probe",
+   "task": "find out the path MTU towards the remote site",
+   "bare": {
+    "predicted": "arping",
+    "exact": false,
+    "invented": true,
+    "content": "arping(\"10.0.0.1\",",
+    "prompt_n": 21,
+    "prompt_s": 0.074452,
+    "restore_s": 0.0,
+    "ttft_s": 0.074452,
+    "wall_s": 0.3523425799794495
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 14690,
+    "prompt_s": 9.311742,
+    "restore_s": 0.0,
+    "ttft_s": 9.311742,
+    "wall_s": 9.622844288009219
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 17,
+    "prompt_s": 0.098245,
+    "restore_s": 0.22623962396755815,
+    "ttft_s": 0.3244846239675582,
+    "wall_s": 0.6338341030059382
+   }
+  },
+  {
+   "symbol": "acl_hits",
+   "task": "read the hit counters of the ACL EDGE-IN",
+   "bare": {
+    "predicted": "ace",
+    "exact": false,
+    "invented": true,
+    "content": "ace(netkit.EDGE_IN, 1)\nprint",
+    "prompt_n": 20,
+    "prompt_s": 0.07086,
+    "restore_s": 0.0,
+    "ttft_s": 0.07086,
+    "wall_s": 0.36209401907399297
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"core-01\")\nprint(result",
+    "prompt_n": 14689,
+    "prompt_s": 9.321627000000001,
+    "restore_s": 0.0,
+    "ttft_s": 9.321627000000001,
+    "wall_s": 9.63607134798076
+   },
+   "kvpack": {
+    "predicted": "arp_tally_tabl",
+    "exact": false,
+    "invented": true,
+    "content": "arp_tally_tabl(\"core-01\", ",
+    "prompt_n": 16,
+    "prompt_s": 0.097314,
+    "restore_s": 0.2255106749944389,
+    "ttft_s": 0.3228246749944389,
+    "wall_s": 0.6290375710232183
+   }
+  },
+  {
+   "symbol": "acl_hits",
+   "task": "collect the ACL rule hits for the management filter",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl(\"show access-lists management\")\nprint(result)",
+    "prompt_n": 20,
+    "prompt_s": 0.07129,
+    "restore_s": 0.0,
+    "ttft_s": 0.07129,
+    "wall_s": 0.3486752799944952
+   },
+   "rag": {
+    "predicted": "arp_drain_inte",
+    "exact": false,
+    "invented": false,
+    "content": "arp_drain_inte(\"router1\", \"eth0",
+    "prompt_n": 14689,
+    "prompt_s": 9.318847,
+    "restore_s": 0.0,
+    "ttft_s": 9.318847,
+    "wall_s": 9.626808805041946
+   },
+   "kvpack": {
+    "predicted": "arp_drain_inte",
+    "exact": false,
+    "invented": false,
+    "content": "arp_drain_inte(\"router1\", \"eth0",
+    "prompt_n": 16,
+    "prompt_s": 0.097509,
+    "restore_s": 0.22590151394251734,
+    "ttft_s": 0.32341051394251735,
+    "wall_s": 0.6295660219620913
+   }
+  },
+  {
+   "symbol": "trk_members",
+   "task": "list the member ports of Eth-Trunk1",
+   "bare": {
+    "predicted": "ports",
+    "exact": false,
+    "invented": true,
+    "content": "ports.list_eth_trunk(eth_trunk_id=1",
+    "prompt_n": 20,
+    "prompt_s": 0.071275,
+    "restore_s": 0.0,
+    "ttft_s": 0.071275,
+    "wall_s": 0.34852791007142514
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 14689,
+    "prompt_s": 9.284040999999998,
+    "restore_s": 0.0,
+    "ttft_s": 9.284040999999998,
+    "wall_s": 9.591630360926501
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 16,
+    "prompt_s": 0.097153,
+    "restore_s": 0.23455918091349304,
+    "ttft_s": 0.331712180913493,
+    "wall_s": 0.637635629856959
+   }
+  },
+  {
+   "symbol": "trk_members",
+   "task": "show the Eth-Trunk members on the aggregation switch",
+   "bare": {
+    "predicted": "agg",
+    "exact": false,
+    "invented": true,
+    "content": "agg.show_eth_trunk(eth_trunk_id=1",
+    "prompt_n": 21,
+    "prompt_s": 0.073518,
+    "restore_s": 0.0,
+    "ttft_s": 0.073518,
+    "wall_s": 0.35103619494475424
+   },
+   "rag": {
+    "predicted": "ont_trace_pref",
+    "exact": false,
+    "invented": false,
+    "content": "ont_trace_pref(old=\"10.0.0.",
+    "prompt_n": 14690,
+    "prompt_s": 9.310284,
+    "restore_s": 0.0,
+    "ttft_s": 9.310284,
+    "wall_s": 9.621006941073574
+   },
+   "kvpack": {
+    "predicted": "ont_trace_pref",
+    "exact": false,
+    "invented": false,
+    "content": "ont_trace_pref(old=\"10.0.0.",
+    "prompt_n": 17,
+    "prompt_s": 0.099392,
+    "restore_s": 0.24302411009557545,
+    "ttft_s": 0.34241611009557543,
+    "wall_s": 0.6534647761145607
+   }
+  },
+  {
+   "symbol": "sfp_ddm",
+   "task": "read the digital diagnostics of port XGE0/0/1",
+   "bare": {
+    "predicted": "ports",
+    "exact": false,
+    "invented": true,
+    "content": "ports.diagnostics.read(port=\"XGE0/0/",
+    "prompt_n": 24,
+    "prompt_s": 0.07508100000000001,
+    "restore_s": 0.0,
+    "ttft_s": 0.07508100000000001,
+    "wall_s": 0.3555744489422068
+   },
+   "rag": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(\"core1\", \"XGE0/0",
+    "prompt_n": 14693,
+    "prompt_s": 9.456365,
+    "restore_s": 0.0,
+    "ttft_s": 9.456365,
+    "wall_s": 9.772419157088734
+   },
+   "kvpack": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(\"core-01\")\nprint(result)",
+    "prompt_n": 20,
+    "prompt_s": 0.099527,
+    "restore_s": 0.2341690839966759,
+    "ttft_s": 0.33369608399667594,
+    "wall_s": 0.6448143230518326
+   }
+  },
+  {
+   "symbol": "sfp_ddm",
+   "task": "check the SFP transceiver temperature on the uplink",
+   "bare": {
+    "predicted": "thermal",
+    "exact": false,
+    "invented": true,
+    "content": "thermal.get_sfp_temperature(\n    hostname=\"10",
+    "prompt_n": 22,
+    "prompt_s": 0.074205,
+    "restore_s": 0.0,
+    "ttft_s": 0.074205,
+    "wall_s": 0.3666192210512236
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(device=\"core-01\")\nprint",
+    "prompt_n": 14691,
+    "prompt_s": 9.385573,
+    "restore_s": 0.0,
+    "ttft_s": 9.385573,
+    "wall_s": 9.705094662960619
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(device=\"core-1\")\nprint(result",
+    "prompt_n": 18,
+    "prompt_s": 0.105679,
+    "restore_s": 0.23549793497659266,
+    "ttft_s": 0.3411769349765926,
+    "wall_s": 0.6674696928821504
+   }
+  },
+  {
+   "symbol": "rt_lookup",
+   "task": "find the route to reach 10.20.30.40 on pe-02",
+   "bare": {
+    "predicted": "rip",
+    "exact": false,
+    "invented": true,
+    "content": "rip.route('pe-01', '10.",
+    "prompt_n": 33,
+    "prompt_s": 0.081688,
+    "restore_s": 0.0,
+    "ttft_s": 0.081688,
+    "wall_s": 0.36919109302107245
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"pe-02\", \"10.",
+    "prompt_n": 14702,
+    "prompt_s": 9.400331,
+    "restore_s": 0.0,
+    "ttft_s": 9.400331,
+    "wall_s": 9.714879743987694
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(\"pe-02\", \"10.",
+    "prompt_n": 29,
+    "prompt_s": 0.110722,
+    "restore_s": 0.23636873497162014,
+    "ttft_s": 0.34709073497162013,
+    "wall_s": 0.6645206699613482
+   }
+  },
+  {
+   "symbol": "rt_lookup",
+   "task": "do a route lookup for the customer IP",
+   "bare": {
+    "predicted": "rip",
+    "exact": false,
+    "invented": true,
+    "content": "rip.route_lookup(\"192.168.",
+    "prompt_n": 19,
+    "prompt_s": 0.071655,
+    "restore_s": 0.0,
+    "ttft_s": 0.071655,
+    "wall_s": 0.35777192295063287
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 14688,
+    "prompt_s": 9.363734000000001,
+    "restore_s": 0.0,
+    "ttft_s": 9.363734000000001,
+    "wall_s": 9.679754298063926
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 15,
+    "prompt_s": 0.097508,
+    "restore_s": 0.2402099099708721,
+    "ttft_s": 0.3377179099708721,
+    "wall_s": 0.6453959048958495
+   }
+  },
+  {
+   "symbol": "vrf_list",
+   "task": "list the VRF instances on the PE router",
+   "bare": {
+    "predicted": "iosvrf",
+    "exact": false,
+    "invented": true,
+    "content": "iosvrf.list_vrf()\nprint(result)\n\n",
+    "prompt_n": 20,
+    "prompt_s": 0.071032,
+    "restore_s": 0.0,
+    "ttft_s": 0.071032,
+    "wall_s": 0.348733706981875
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"PE1\")\nprint(result)\n\n",
+    "prompt_n": 14689,
+    "prompt_s": 9.298546,
+    "restore_s": 0.0,
+    "ttft_s": 9.298546,
+    "wall_s": 9.614974982920103
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"PE1\")\nprint(result)\n\n",
+    "prompt_n": 16,
+    "prompt_s": 0.09943,
+    "restore_s": 0.22844245308078825,
+    "ttft_s": 0.3278724530807883,
+    "wall_s": 0.6427268470870331
+   }
+  },
+  {
+   "symbol": "vrf_list",
+   "task": "enumerate all VRF instances configured on pe-03",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl(\"pe-03\", \"show vrf\")",
+    "prompt_n": 22,
+    "prompt_s": 0.07512300000000001,
+    "restore_s": 0.0,
+    "ttft_s": 0.07512300000000001,
+    "wall_s": 0.35966287599876523
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"pe-03\")\nprint(result",
+    "prompt_n": 14691,
+    "prompt_s": 9.315583,
+    "restore_s": 0.0,
+    "ttft_s": 9.315583,
+    "wall_s": 9.627578547107987
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"pe-03\")\nprint(result",
+    "prompt_n": 18,
+    "prompt_s": 0.09912,
+    "restore_s": 0.2341062850318849,
+    "ttft_s": 0.3332262850318849,
+    "wall_s": 0.6451675171265379
+   }
+  },
+  {
+   "symbol": "snmp_walk2",
+   "task": "walk the SNMP OID subtree 1.3.6.1.2.1.2 on the switch",
+   "bare": {
+    "predicted": "oid_walk",
+    "exact": false,
+    "invented": true,
+    "content": "oid_walk(\"1.3.6.1.2",
+    "prompt_n": 33,
+    "prompt_s": 0.08063200000000001,
+    "restore_s": 0.0,
+    "ttft_s": 0.08063200000000001,
+    "wall_s": 0.36580541101284325
+   },
+   "rag": {
+    "predicted": "oid_walk2",
+    "exact": false,
+    "invented": true,
+    "content": "oid_walk2(\"1.3.6.1.",
+    "prompt_n": 14702,
+    "prompt_s": 9.383310999999999,
+    "restore_s": 0.0,
+    "ttft_s": 9.383310999999999,
+    "wall_s": 9.708462490001693
+   },
+   "kvpack": {
+    "predicted": "oid_walk2",
+    "exact": false,
+    "invented": true,
+    "content": "oid_walk2(\"1.3.6.1.",
+    "prompt_n": 29,
+    "prompt_s": 0.10598099999999999,
+    "restore_s": 0.237296300008893,
+    "ttft_s": 0.343277300008893,
+    "wall_s": 0.6574697000905871
+   }
+  },
+  {
+   "symbol": "snmp_walk2",
+   "task": "walk the OID for the interface table",
+   "bare": {
+    "predicted": "oid_walk",
+    "exact": false,
+    "invented": true,
+    "content": "oid_walk(netkit.oid_ifTable)\n\n# print",
+    "prompt_n": 18,
+    "prompt_s": 0.071225,
+    "restore_s": 0.0,
+    "ttft_s": 0.071225,
+    "wall_s": 0.35130893893074244
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"10.0.0.1",
+    "prompt_n": 14687,
+    "prompt_s": 9.263114999999999,
+    "restore_s": 0.0,
+    "ttft_s": 9.263114999999999,
+    "wall_s": 9.574882745044306
+   },
+   "kvpack": {
+    "predicted": "arp_dump",
+    "exact": false,
+    "invented": false,
+    "content": "arp_dump(\"rtr01\")\nprint(result)",
+    "prompt_n": 14,
+    "prompt_s": 0.097084,
+    "restore_s": 0.23276876693125814,
+    "ttft_s": 0.32985276693125815,
+    "wall_s": 0.6413335680263117
+   }
+  },
+  {
+   "symbol": "ntp_skew",
+   "task": "get the clock offset of the firewall",
+   "bare": {
+    "predicted": "arping",
+    "exact": false,
+    "invented": true,
+    "content": "arping(\"192.168.1",
+    "prompt_n": 18,
+    "prompt_s": 0.07066700000000001,
+    "restore_s": 0.0,
+    "ttft_s": 0.07066700000000001,
+    "wall_s": 0.35232486005406827
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 14687,
+    "prompt_s": 9.387105,
+    "restore_s": 0.0,
+    "ttft_s": 9.387105,
+    "wall_s": 9.697865713969804
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 14,
+    "prompt_s": 0.097588,
+    "restore_s": 0.23056148504838347,
+    "ttft_s": 0.3281494850483835,
+    "wall_s": 0.6355494540184736
+   }
+  },
+  {
+   "symbol": "ntp_skew",
+   "task": "check the NTP offset of every core device",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl(\"ntp offset\")\nprint(result)\n\n# check",
+    "prompt_n": 20,
+    "prompt_s": 0.07210899999999999,
+    "restore_s": 0.0,
+    "ttft_s": 0.07210899999999999,
+    "wall_s": 0.3524190840544179
+   },
+   "rag": {
+    "predicted": "ont_peek_memb",
+    "exact": false,
+    "invented": false,
+    "content": "ont_peek_memb(\"core-1\", \"Ethernet",
+    "prompt_n": 14689,
+    "prompt_s": 9.361012,
+    "restore_s": 0.0,
+    "ttft_s": 9.361012,
+    "wall_s": 9.678462096955627
+   },
+   "kvpack": {
+    "predicted": "ntp_skew",
+    "exact": true,
+    "invented": false,
+    "content": "ntp_skew(\"core-1\")\nprint(result)",
+    "prompt_n": 16,
+    "prompt_s": 0.100725,
+    "restore_s": 0.23903280508238822,
+    "ttft_s": 0.33975780508238823,
+    "wall_s": 0.6544313830090687
+   }
+  },
+  {
+   "symbol": "lag_hash",
+   "task": "read the load balancing hash of Eth-Trunk2",
+   "bare": {
+    "predicted": "ctl",
+    "exact": false,
+    "invented": true,
+    "content": "ctl('show load-balance-hash Eth-Trunk 2",
+    "prompt_n": 21,
+    "prompt_s": 0.074041,
+    "restore_s": 0.0,
+    "ttft_s": 0.074041,
+    "wall_s": 0.35963637998793274
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"core1\")\nprint(result)\n\n",
+    "prompt_n": 14690,
+    "prompt_s": 9.470848,
+    "restore_s": 0.0,
+    "ttft_s": 9.470848,
+    "wall_s": 9.792895048041828
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"core1\")\nprint(result)\n\n",
+    "prompt_n": 17,
+    "prompt_s": 0.09766899999999999,
+    "restore_s": 0.23130273504648358,
+    "ttft_s": 0.3289717350464836,
+    "wall_s": 0.6349222561111674
+   }
+  },
+  {
+   "symbol": "lag_hash",
+   "task": "show which hash mode the uplink aggregation uses",
+   "bare": {
+    "predicted": "ports",
+    "exact": false,
+    "invented": true,
+    "content": "ports.show_lacp_mode()\nprint(result)\n\n",
+    "prompt_n": 20,
+    "prompt_s": 0.071154,
+    "restore_s": 0.0,
+    "ttft_s": 0.071154,
+    "wall_s": 0.3550092380028218
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(device=\"r1\")\nprint(result)",
+    "prompt_n": 14689,
+    "prompt_s": 9.427138000000001,
+    "restore_s": 0.0,
+    "ttft_s": 9.427138000000001,
+    "wall_s": 9.749147280002944
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(device=\"r1\")\nprint(result)",
+    "prompt_n": 16,
+    "prompt_s": 0.097508,
+    "restore_s": 0.27429676498286426,
+    "ttft_s": 0.37180476498286424,
+    "wall_s": 0.684015130973421
+   }
+  },
+  {
+   "symbol": "poe_budget",
+   "task": "check the PoE power budget of the access switch",
+   "bare": {
+    "predicted": "ios",
+    "exact": false,
+    "invented": true,
+    "content": "ios('show power inline')\nprint(result)\n\n#",
+    "prompt_n": 21,
+    "prompt_s": 0.076116,
+    "restore_s": 0.0,
+    "ttft_s": 0.076116,
+    "wall_s": 0.36709565797355026
+   },
+   "rag": {
+    "predicted": "arp_purge_poli",
+    "exact": false,
+    "invented": true,
+    "content": "arp_purge_poli(old: str, new: str",
+    "prompt_n": 14690,
+    "prompt_s": 9.387621,
+    "restore_s": 0.0,
+    "ttft_s": 9.387621,
+    "wall_s": 9.704132560058497
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"access1\")\nprint(result)\n\n",
+    "prompt_n": 17,
+    "prompt_s": 0.098693,
+    "restore_s": 0.23757379199378192,
+    "ttft_s": 0.33626679199378195,
+    "wall_s": 0.6504261719528586
+   }
+  },
+  {
+   "symbol": "poe_budget",
+   "task": "report the PoE budget left on sw-floor-2",
+   "bare": {
+    "predicted": "ios",
+    "exact": false,
+    "invented": true,
+    "content": "ios(\"sw-floor-2\", \"show power inline\")",
+    "prompt_n": 22,
+    "prompt_s": 0.075048,
+    "restore_s": 0.0,
+    "ttft_s": 0.075048,
+    "wall_s": 0.35797950997948647
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"sw-floor-2\")\nprint(result",
+    "prompt_n": 14691,
+    "prompt_s": 9.375455,
+    "restore_s": 0.0,
+    "ttft_s": 9.375455,
+    "wall_s": 9.701858664979227
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"sw-floor-2\")\nprint(result",
+    "prompt_n": 18,
+    "prompt_s": 0.103139,
+    "restore_s": 0.3837432460859418,
+    "ttft_s": 0.48688224608594177,
+    "wall_s": 0.8043146640993655
+   }
+  },
+  {
+   "symbol": "stp_root",
+   "task": "find the spanning tree root for VLAN 10",
+   "bare": {
+    "predicted": "ospf",
+    "exact": false,
+    "invented": true,
+    "content": "ospf.spanning_tree_root(vlan=10)",
+    "prompt_n": 21,
+    "prompt_s": 0.075309,
+    "restore_s": 0.0,
+    "ttft_s": 0.075309,
+    "wall_s": 0.3670072890818119
+   },
+   "rag": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"core-switch-01\")\nprint",
+    "prompt_n": 14690,
+    "prompt_s": 9.371399,
+    "restore_s": 0.0,
+    "ttft_s": 9.371399,
+    "wall_s": 9.686727899941616
+   },
+   "kvpack": {
+    "predicted": "arp_tally",
+    "exact": false,
+    "invented": false,
+    "content": "arp_tally(\"core-switch-01\")\nprint",
+    "prompt_n": 17,
+    "prompt_s": 0.099388,
+    "restore_s": 0.25144963792990893,
+    "ttft_s": 0.35083763792990896,
+    "wall_s": 0.669608793919906
+   }
+  },
+  {
+   "symbol": "stp_root",
+   "task": "tell me the root bridge of VLAN 200",
+   "bare": {
+    "predicted": "ospf",
+    "exact": false,
+    "invented": true,
+    "content": "ospf.show_root_bridge(vlan=200)",
+    "prompt_n": 22,
+    "prompt_s": 0.077303,
+    "restore_s": 0.0,
+    "ttft_s": 0.077303,
+    "wall_s": 0.3740973670501262
+   },
+   "rag": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 14691,
+    "prompt_s": 9.336509,
+    "restore_s": 0.0,
+    "ttft_s": 9.336509,
+    "wall_s": 9.64903680596035
+   },
+   "kvpack": {
+    "predicted": "arp_trace",
+    "exact": false,
+    "invented": false,
+    "content": "arp_trace(old=\"192.168.",
+    "prompt_n": 18,
+    "prompt_s": 0.097667,
+    "restore_s": 0.2240055319853127,
+    "ttft_s": 0.3216725319853127,
+    "wall_s": 0.6323328199796379
+   }
+  }
+ ]
+}
