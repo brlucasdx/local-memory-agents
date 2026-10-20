@@ -1,0 +1,107 @@
+#!/usr/bin/env python3
+"""gemdocs — search the documentation of the installed Ruby gems.
+
+Usage:
+  gemdocs QUERY...            best matching documentation sections across all gems
+  gemdocs --gem NAME QUERY... search inside one gem only (e.g. --gem ruby_llm)
+  gemdocs --list              list installed gems and versions
+Options: -n N (results, default 5)
+
+Read-only. Looks at README/CHANGELOG/guides (*.md, *.rdoc, *.txt under docs/) and
+at comment blocks in lib/**/*.rb of the gems under $GEM_HOME.
+"""
+
+import argparse
+import math
+import os
+import re
+import sys
+from pathlib import Path
+
+GEM_ROOT = Path(os.environ.get("GEM_HOME", "")) / "gems"
+DOC_SUFFIXES = {".md", ".rdoc", ".markdown"}
+MAX_FILE_BYTES = 400_000
+WORD = re.compile(r"[a-z_][a-z0-9_]+")
+
+
+def gems():
+    for d in sorted(GEM_ROOT.iterdir()) if GEM_ROOT.is_dir() else []:
+        name, _, version = d.name.rpartition("-")
+        if name:
+            yield name, version, d
+
+
+def chunks(path: Path):
+    """Markdown sections, or comment blocks of Ruby files, as (line, text)."""
+    try:
+        if path.stat().st_size > MAX_FILE_BYTES:
+            return
+        lines = path.read_text(errors="ignore").splitlines()
+    except OSError:
+        return
+    if path.suffix == ".rb":
+        block, start = [], 0
+        for i, line in enumerate(lines + [""]):
+            s = line.strip()
+            if s.startswith("#"):
+                if not block:
+                    start = i + 1
+                block.append(s.lstrip("# "))
+            elif block:
+                nxt = s if re.match(r"(def|class|module|attr_)", s) else ""
+                if len(block) >= 2:
+                    yield start, "\n".join(block + ([nxt] if nxt else []))
+                block = []
+        return
+    start, buf = 1, []
+    for i, line in enumerate(lines):
+        if re.match(r"#{1,4} ", line) and buf:
+            yield start, "\n".join(buf)
+            start, buf = i + 1, []
+        buf.append(line)
+    if buf:
+        yield start, "\n".join(buf)
+
+
+def candidates(only: str | None):
+    for name, version, root in gems():
+        if only and name != only:
+            continue
+        for p in list(root.glob("*.md")) + list(root.glob("*.rdoc")) + list(root.glob("docs/**/*")) + list(root.glob("lib/**/*.rb")):
+            if p.is_file() and (p.suffix in DOC_SUFFIXES or p.suffix == ".rb" or p.parent.name == "docs"):
+                for line, text in chunks(p):
+                    yield f"{name}-{version}", p, line, text
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(prog="gemdocs", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("query", nargs="*")
+    ap.add_argument("--gem")
+    ap.add_argument("--list", action="store_true")
+    ap.add_argument("-n", type=int, default=5)
+    a = ap.parse_args()
+    if a.list:
+        for name, version, _ in gems():
+            print(f"{name} {version}")
+        return
+    terms = WORD.findall(" ".join(a.query).lower())
+    if not terms:
+        ap.error("give a query, e.g.: gemdocs --gem ruby_llm chat ask")
+    docs = list(candidates(a.gem))
+    if not docs:
+        sys.exit("no documentation found (check --gem name with --list)")
+    df = {t: sum(1 for _, _, _, x in docs if t in x.lower()) for t in set(terms)}
+    n = len(docs)
+    scored = []
+    for gem, path, line, text in docs:
+        low = text.lower()
+        score = sum(low.count(t) and (1 + math.log(low.count(t))) * math.log(1 + n / (1 + df[t])) for t in set(terms))
+        if score:
+            scored.append((score / (1 + len(low) / 4000), gem, path, line, text))
+    for score, gem, path, line, text in sorted(scored, reverse=True)[: a.n]:
+        rel = path.relative_to(GEM_ROOT)
+        print(f"=== {gem}  {rel}:{line}\n{text[:1500]}\n")
+
+
+if __name__ == "__main__":
+    main()

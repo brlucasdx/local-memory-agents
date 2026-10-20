@@ -1,0 +1,1 @@
+Sprint 2. Make the chat multi-user. People can sign up, log in and log out. Every conversation belongs to the person who created it, and people only ever see and act on their own conversations. Add a search box that filters the logged-in person's conversations by title or message text, and a small page showing how many conversations and messages that person has.
