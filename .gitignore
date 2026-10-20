@@ -19,3 +19,6 @@ CLAUDE.md
 astra/
 docs/pt/
 experiments/01-tf-engram-audit/work/
+
+# compiled library-memory packages are model-specific build outputs
+packages/compiled/

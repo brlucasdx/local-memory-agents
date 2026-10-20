@@ -1,0 +1,77 @@
+[
+ {
+  "target_tokens": 8000,
+  "prompt_tokens": 8012,
+  "cold_prefill_s": 4.74333,
+  "cold_wall_s": 5.92576829099562,
+  "snapshot_gb": 0.298591696,
+  "save_s": 0.1379178260685876,
+  "restore_s": 0.06840810901485384,
+  "restore_reported": {
+   "id_slot": 0,
+   "filename": "ctx8000.bin",
+   "n_restored": 8059,
+   "n_read": 298591696,
+   "timings": {
+    "restore_ms": 67.857
+   }
+  },
+  "warm_prompt_n": 4,
+  "warm_prefill_s": 0.060826,
+  "warm_wall_s": 1.2420551100512967,
+  "decode_tok_s_cold": 40.08388619246576,
+  "decode_tok_s_warm": 40.14452027298274,
+  "identical_output": true,
+  "speedup_prefill_vs_restore": 36.7033907391648
+ },
+ {
+  "target_tokens": 32000,
+  "prompt_tokens": 32012,
+  "cold_prefill_s": 20.758134,
+  "cold_wall_s": 22.102073865942657,
+  "snapshot_gb": 0.717055696,
+  "save_s": 0.3417007819516584,
+  "restore_s": 0.16106063895858824,
+  "restore_reported": {
+   "id_slot": 0,
+   "filename": "ctx32000.bin",
+   "n_restored": 32059,
+   "n_read": 717055696,
+   "timings": {
+    "restore_ms": 160.538
+   }
+  },
+  "warm_prompt_n": 4,
+  "warm_prefill_s": 0.067349,
+  "warm_wall_s": 1.4093005049508065,
+  "decode_tok_s_cold": 35.76886312854264,
+  "decode_tok_s_warm": 35.79512394252065,
+  "identical_output": true,
+  "speedup_prefill_vs_restore": 90.8811646244209
+ },
+ {
+  "target_tokens": 60000,
+  "prompt_tokens": 60012,
+  "cold_prefill_s": 43.058745,
+  "cold_wall_s": 44.609550524968654,
+  "snapshot_gb": 1.205263696,
+  "save_s": 0.6555127419997007,
+  "restore_s": 0.347362824017182,
+  "restore_reported": {
+   "id_slot": 0,
+   "filename": "ctx60000.bin",
+   "n_restored": 60059,
+   "n_read": 1205263696,
+   "timings": {
+    "restore_ms": 346.869
+   }
+  },
+  "warm_prompt_n": 4,
+  "warm_prefill_s": 0.077961,
+  "warm_wall_s": 1.6221945740981027,
+  "decode_tok_s_cold": 31.429654748586167,
+  "decode_tok_s_warm": 31.5045711792161,
+  "identical_output": true,
+  "speedup_prefill_vs_restore": 101.23755728825701
+ }
+]

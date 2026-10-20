@@ -1,0 +1,77 @@
+[
+ {
+  "target_tokens": 8000,
+  "prompt_tokens": 8012,
+  "cold_prefill_s": 4.7438519999999995,
+  "cold_wall_s": 5.925384370028041,
+  "snapshot_gb": 0.298591696,
+  "save_s": 0.24806154007092118,
+  "restore_s": 0.15848545101471245,
+  "restore_reported": {
+   "id_slot": 0,
+   "filename": "ctx8000.bin",
+   "n_restored": 8059,
+   "n_read": 298591696,
+   "timings": {
+    "restore_ms": 157.773
+   }
+  },
+  "warm_prompt_n": 4,
+  "warm_prefill_s": 0.05865,
+  "warm_wall_s": 1.2387917559826747,
+  "decode_tok_s_cold": 40.13492165150933,
+  "decode_tok_s_warm": 40.14678347387555,
+  "identical_output": true,
+  "speedup_prefill_vs_restore": 21.847431996162477
+ },
+ {
+  "target_tokens": 32000,
+  "prompt_tokens": 32012,
+  "cold_prefill_s": 20.797488,
+  "cold_wall_s": 22.14283319201786,
+  "snapshot_gb": 0.717055696,
+  "save_s": 0.6720948009751737,
+  "restore_s": 0.4642832820536569,
+  "restore_reported": {
+   "id_slot": 0,
+   "filename": "ctx32000.bin",
+   "n_restored": 32059,
+   "n_read": 717055696,
+   "timings": {
+    "restore_ms": 463.523
+   }
+  },
+  "warm_prompt_n": 4,
+  "warm_prefill_s": 0.06727899999999999,
+  "warm_wall_s": 1.4096634360030293,
+  "decode_tok_s_cold": 35.709835552408364,
+  "decode_tok_s_warm": 35.77068706356908,
+  "identical_output": true,
+  "speedup_prefill_vs_restore": 39.125213925356476
+ },
+ {
+  "target_tokens": 60000,
+  "prompt_tokens": 60012,
+  "cold_prefill_s": 43.098375,
+  "cold_wall_s": 44.645493678050116,
+  "snapshot_gb": 1.205263696,
+  "save_s": 1.165790232946165,
+  "restore_s": 0.6347459540702403,
+  "restore_reported": {
+   "id_slot": 0,
+   "filename": "ctx60000.bin",
+   "n_restored": 60059,
+   "n_read": 1205263696,
+   "timings": {
+    "restore_ms": 633.949
+   }
+  },
+  "warm_prompt_n": 4,
+  "warm_prefill_s": 0.079482,
+  "warm_wall_s": 1.6197865420253947,
+  "decode_tok_s_cold": 31.54506380156947,
+  "decode_tok_s_warm": 31.595109345967792,
+  "identical_output": true,
+  "speedup_prefill_vs_restore": 60.34260456257851
+ }
+]
