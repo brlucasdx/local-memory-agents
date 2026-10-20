@@ -47,8 +47,8 @@ Sprint 1: 60 min · Sprint 2: 45 min · Sprint 3: 30 min · Sprint 4: 30 min. Wh
 A mini-sprint score does not map to the original's scores. A later run with a model that has a known v4 score (e.g. DeepSeek V4 Flash, 86 there) under the same setup provides the ruler.
 
 ## Status (2026-10-20): prepared, not run
-Done: prompts, `gemdocs` tool, pre-registration; Ruby 3.3.8, Rails 8.1.4 and Bundler 2.7.2 installed in the dedicated `GEM_HOME`.
-Pending: finish pre-caching the app gems (interrupted), the bubblewrap sandbox launcher (use `PI_CODING_AGENT_DIR` pointing to an experiment-only Pi config **without** `auth.json`), the run orchestrator, and the 15-minute kill test.
+Done: prompts, `gemdocs` tool, pre-registration; Ruby 3.3.8, Rails 8.1.4 and Bundler 2.7.2 installed in the dedicated `GEM_HOME`; app gems pre-cached (369 MB, including ruby_llm 2.1.1, capybara, selenium-webdriver, brakeman, rubocop-rails-omakase, bundler-audit with its advisory database, webmock, sqlite3, tailwindcss-ruby).
+Pending: the bubblewrap sandbox launcher (use `PI_CODING_AGENT_DIR` pointing to an experiment-only Pi config **without** `auth.json`), the run orchestrator, and the 15-minute kill test.
 
 ## Results
 *(filled after the run)*
