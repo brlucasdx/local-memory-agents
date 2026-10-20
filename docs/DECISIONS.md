@@ -4,7 +4,7 @@ Newest first. Each entry: date, decision, why, what would change it.
 
 ## 2026-10-20 — Build our own architecture instead of reproducing TF-Engram
 - **Decision:** the project builds two memories of its own: **context snapshots on the SSD** and **library memory with self-encoded values**. TF-Engram stops being a reproduction target and becomes prior art and a design reference; the authors' questions remain optional.
-- **Why:** (1) the audit shows the paper cannot be reproduced faithfully; (2) self-encoded values (computed by the core model itself) close the gap TF-Engram leaves open, alignment between an external embedder and the backbone; (3) measured prefill on the RTX 3060 (~1,400–1,700 tok/s) against an estimated ~0.25–0.55 s to load a 50k-token context snapshot from NVMe makes context memory a candidate ~55–120× gain per agent step, the largest lever found so far.
+- **Why:** (1) the audit shows the paper cannot be reproduced faithfully; (2) self-encoded values (computed by the core model itself) close the gap TF-Engram leaves open, alignment between an external embedder and the backbone; (3) measured prefill on the RTX 3060 (~1,400–1,700 tok/s) against ~0.52 s to load a 50k-token context snapshot from the measured 3.2 GB/s NVMe makes context memory a candidate ~58× gain per agent step, the largest lever found so far.
 - **Would change if:** B2 shows snapshot loads are not much faster than recomputation on real hardware, or that exact-prefix reuse does not reproduce the logits.
 
 ## 2026-10-20 — Phase 1 gate: stop faithful reproduction, ask the authors

@@ -25,6 +25,9 @@ Ornith settings (`ornith-code` Modelfile): temperature 0.6, top_p 0.95, top_k 20
 
 Ollama `/api/generate`, `num_predict 1`, think off, num_ctx 32768, repeated Python code as the prompt.
 
+## Storage (2026-10-20)
+- NVMe sequential read: **3.2 GB/s** (4 GiB of random data, `dd bs=16M iflag=direct`, page cache bypassed).
+
 ## Swift 27B, chat (Ollama CLI, no harness)
 | Task | Thinking | Total | Tokens | Result |
 |---|---|---|---|---|

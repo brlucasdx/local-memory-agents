@@ -20,7 +20,8 @@ A small coding agent at home hits two walls (see [PROPOSAL.md](PROPOSAL.md)): it
 - **[measured]** RTX 3060, Ornith 1.5 9B Q6_K: prefill at **1,413 tok/s** (4,770-token prompt) and **1,703 tok/s** (19,134 tokens). A 50k-token agent context therefore costs **~30 s per step** to re-read **[estimate from measured rate]**.
 - **[measured]** Ornith architecture (GGUF metadata): 33 blocks, full attention every 4th block (`full_attention_interval = 4`), 4 KV heads × 256-dim keys and values; the other blocks are linear-attention/SSM layers (`ssm.inner_size = 4096`, `ssm.state_size = 128`).
 - **[estimate]** KV per token ≈ 8 full-attention layers × 4 heads × (256 + 256) × 2 bytes ≈ **32 KB/token**. Recurrent state ≈ 24 layers × 4096 × 128 × 4 bytes ≈ **~50 MB per snapshot, independent of length**.
-- **[estimate]** 50k-token snapshot ≈ 1.6 GB KV + 0.05 GB state ≈ **1.65 GB**. NVMe at 3–7 GB/s → **0.25–0.55 s** to load, against ~30 s to recompute: **~55–120× faster**. *(The NVMe read speed of the target machine is still to be measured.)*
+- **[measured]** NVMe sequential read on the target machine: **3.2 GB/s** (4 GiB file, `dd` with `iflag=direct`, page cache bypassed).
+- **[estimate]** 50k-token snapshot ≈ 1.6 GB KV + 0.05 GB state ≈ **1.65 GB** → **~0.52 s** to load at 3.2 GB/s, against **~30 s** to recompute: **~58× faster per agent step**, before PCIe transfer and deserialization overheads (to be measured in B2).
 
 ### Design
 Hybrid models (attention + recurrent layers) cannot compose independent per-file blocks: the recurrent state depends on everything before it, in order. So the robust design is **prefix snapshots**, not composition:
@@ -69,7 +70,7 @@ Per symbol: one 4096-dim vector for a 9B core ≈ 8 KB in FP16. A whole library 
 
 | Step | What | Gate (pre-registered) |
 |---|---|---|
-| B0 | Measurements: prefill rate ✅, KV bytes/token ✅, **NVMe read speed (pending)** | — |
+| B0 | Measurements: prefill rate ✅, KV bytes/token ✅, NVMe read 3.2 GB/s ✅ | — |
 | B1 | Research runtime in PyTorch (Hugging Face Transformers) with a small dense core first (Qwen3-0.6B) for hooks and KV I/O, then Ornith | layer hooks and KV save/load verified |
 | B2 | **Context snapshots on SSD** | exact-prefix load gives the same logits; warm load of a 20–50k-token repo context takes **< 10%** of the prefill time |
 | B3 | Library memory v0: source format, compiler, injection | on a small dev set, fewer non-existent API calls than the bare core, without lowering test success |
