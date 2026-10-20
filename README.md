@@ -19,9 +19,16 @@ Small open models can already run at home. What they can't do is run *fast enoug
 
 ## Thesis
 
+Two memories on cheap storage, one per wall (design: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)):
+
+- **Context memory on the SSD.** Instead of re-reading the repository at every agent step, load the model's own processed context from NVMe. **[measured]** the RTX 3060 re-reads Ornith 9B context at ~1,400–1,700 tok/s (~30 s for 50k tokens); **[estimate]** loading the same context snapshot (~1.65 GB) from NVMe takes ~0.25–0.55 s.
+- **Library memory.** Version-pinned API knowledge injected into the hidden state, with values computed by the core model itself, shared by the community as source packages and compiled locally per model.
+
+Details:
+
 1. **API memory instead of API context.** Version-pinned library knowledge (e.g. Rails 8, RubyLLM) lives in a conditional-memory table in RAM/SSD. The model reads a few rows per token instead of re-reading docs every step.
 2. **Memory packages.** One memory file per library and version, generated from the real docs and pluggable into a small model without retraining. This also covers APIs released after the model's training cutoff, which is a problem frontier models have too.
-3. **Project memory** (long-term, most speculative): the repository indexed as memory instead of re-read as context.
+3. **Context snapshots.** The repository context is laid out from stable to volatile, saved as prefix snapshots (append-only KV log + recurrent-state checkpoints) on NVMe, and resumed across agent steps and sessions. Composable per-file context is a later research extension.
 
 ## Prior art (we are building on it, not claiming it)
 
@@ -33,13 +40,13 @@ The core mechanism is published: [DeepSeek Engram](https://arxiv.org/abs/2601.07
 
 | Phase | What | Gate |
 |---|---|---|
-| 0 | Local baseline (Ornith 9B, Pi harness) | done, see [experiments/00-baseline-local](experiments/00-baseline-local) |
+| 0 | Local baseline (Ornith 9B, Pi harness, prefill rate) | done, see [experiments/00-baseline-local](experiments/00-baseline-local) |
 | 1 | TF-Engram reproducibility audit | **done: 6 of 10 decisive details unspecified; questions drafted for the authors**, see [AUDIT](experiments/01-tf-engram-audit/AUDIT.md) |
-| 2 | Minimal reimplementation (Qwen3-0.6B, table in RAM) | each component is verifiable and fits in 12 GB |
-| 3 | Reproduce the published gain, with confidence intervals | confident gain at acceptable cost |
+| 2 | **Context snapshots on SSD** (prefix snapshots for hybrid models) | same logits as recomputation; warm load < 10% of prefill time |
+| 3 | **Library memory v0** (self-encoded values, source/compiled packages) | fewer invented API calls on the dev split without lowering success |
 | 4 | **API memory vs RAG**: 72 executable tasks × 4 arms | API errors −30%, success +10 pp vs bare model; ≥ RAG success with ≥15% less wall time |
 | 5 | Memory packages per library/version | — |
-| 6 | Project memory | — |
+| 6 | Composable per-file context (research extension) | — |
 
 Each phase is pre-registered in its `experiments/NN-*/README.md` before it runs.
 

@@ -17,6 +17,14 @@ Bandwidth ceiling for Ornith 9B: 360 GB/s ÷ ~7.3 GB ≈ 49 tok/s → measured 3
 
 Ornith settings (`ornith-code` Modelfile): temperature 0.6, top_p 0.95, top_k 20, min_p 0, num_ctx 32768 (the card's "precise coding" recommendation).
 
+## Prefill (2026-10-20)
+| Model | Prompt tokens | Prefill time | Rate |
+|---|---|---|---|
+| Ornith 1.5 9B Q6_K | 4,770 | 3.4 s | **1,413 tok/s** |
+| Ornith 1.5 9B Q6_K | 19,134 | 11.2 s | **1,703 tok/s** |
+
+Ollama `/api/generate`, `num_predict 1`, think off, num_ctx 32768, repeated Python code as the prompt.
+
 ## Swift 27B, chat (Ollama CLI, no harness)
 | Task | Thinking | Total | Tokens | Result |
 |---|---|---|---|---|
