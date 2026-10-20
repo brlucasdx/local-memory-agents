@@ -24,7 +24,7 @@ A small coding agent at home hits two walls (see [PROPOSAL.md](PROPOSAL.md)): it
 - **[estimate]** 50k-token snapshot ≈ 1.6 GB KV + 0.05 GB state ≈ **1.65 GB** → **~0.52 s** to load at 3.2 GB/s, against **~30 s** to recompute: **~58× faster per agent step**, before PCIe transfer and deserialization overheads (to be measured in B2).
 
 ### Design
-Hybrid models (attention + recurrent layers) cannot compose independent per-file blocks: the recurrent state depends on everything before it, in order. So the robust design is **prefix snapshots**, not composition:
+Hybrid models (attention + recurrent layers) expose only a fixed-size recurrent state, so naive per-file composition does not work. *(Correction 2026-10-20: [LinearKV](https://arxiv.org/abs/2608.11231), Jul 2026, shows a training-free way to do position-independent caching in hybrid models. Composition is possible, but it is a research technique.)* The robust first design is **prefix snapshots**:
 
 1. **Stable-to-volatile layout.** The agent context is assembled in a fixed order: system prompt → library manifest → repository files sorted by stability (least recently edited first) → task and working set last. Typical edits then fall near the tail.
 2. **Append-only KV log + periodic state checkpoints.** KV for a prefix is shared by every longer prefix, so it is stored once as an append-only log. Only the recurrent state needs checkpoints (~50 MB each, e.g. at every file boundary).
@@ -32,8 +32,14 @@ Hybrid models (attention + recurrent layers) cannot compose independent per-file
 4. **Persistence across sessions.** Snapshots survive restarts: opening the agent tomorrow on the same repository loads the context in under a second instead of re-reading it.
 5. **Correctness check.** Loading an exact prefix must give the same logits as recomputing it (up to numerical tolerance). This is the first gate.
 
-### Prior art to credit and compare against
-Prefix caching exists in servers (vLLM, SGLang RadixAttention), with SSD offload in LMCache and in KV-on-SSD work such as SolidAttention (FAST '26). llama.cpp can save and restore a slot to disk. **Our contribution is the agent-aware layout, persistent snapshots for hybrid models on home hardware, and the end-to-end measurement** (time per agent step), not prefix caching itself.
+### Prior art: this is NOT new (checked 2026-10-20)
+Persistent KV on disk for local agents is an active 2026 area, mostly in community forks and proxies:
+- **llama.cpp upstream:** manual slot save/restore (`--slot-save-path`); hybrid-model prefix checkpoints (`--checkpoint-every-nb`); open bugs where restore loses hybrid checkpoints ([#28194](https://github.com/ggml-org/llama.cpp/issues/28194), fix proposed in [PR #26004](https://github.com/ggml-org/llama.cpp/pull/26004); [#22384](https://github.com/ggml-org/llama.cpp/issues/22384)).
+- **Community tools:** [KVMem](https://github.com/kvmem/kvmem) (~1.1k★, RAM/SSD tiers for long context, no restart persistence); [CachyLLama](https://github.com/Classico42/CachyLLama) (llama.cpp fork with `--cache-ssd`); [local-llm-kv-cache](https://github.com/gbuisson/local-llm-kv-cache) (disk-backed prefix/session proxy for coding agents); [pi-kv-cache-manager](https://github.com/AyaSakura-comp/pi-kv-cache-manager) (snapshot manager for the Pi agent; self-reported cold prefill 170 s → 0.3 s on Strix Halo).
+- **Papers:** [Agent Memory Below the Prompt](https://arxiv.org/abs/2603.04428) (Feb 2026, persistent Q4 KV per agent on edge devices); [LinearKV](https://arxiv.org/abs/2608.11231) (Jul 2026, position-independent caching for hybrid models); SolidAttention (FAST '26).
+- Servers: vLLM/SGLang prefix caching, LMCache SSD offload. Cloud prompt caching is the commercial form of the same idea.
+
+**Consequence:** context memory is not this project's contribution. We **measure and use** existing tools on a 12 GB GPU, and contribute fixes upstream where they are missing (hybrid checkpoint persistence). The original work is the library memory and the combination of both.
 
 ### Research extension (not the first build)
 Composable per-file KV with partial recomputation (CacheBlend-style) only works on pure-attention models, and code is less tolerant of approximation than RAG text. It is kept as a later experiment.
@@ -72,7 +78,7 @@ Per symbol: one 4096-dim vector for a 9B core ≈ 8 KB in FP16. A whole library 
 |---|---|---|
 | B0 | Measurements: prefill rate ✅, KV bytes/token ✅, NVMe read 3.2 GB/s ✅ | — |
 | B1 | Research runtime in PyTorch (Hugging Face Transformers) with a small dense core first (Qwen3-0.6B) for hooks and KV I/O, then Ornith | layer hooks and KV save/load verified |
-| B2 | **Context snapshots on SSD** | exact-prefix load gives the same logits; warm load of a 20–50k-token repo context takes **< 10%** of the prefill time |
+| B2 | **Context snapshots on SSD**: evaluate existing tools first (llama.cpp checkpoints, CachyLLama, KVMem, pi-kv-cache-manager) on the RTX 3060; build only what is missing | exact-prefix load gives the same logits; warm load of a 20–50k-token repo context takes **< 10%** of the prefill time |
 | B3 | Library memory v0: source format, compiler, injection | on a small dev set, fewer non-existent API calls than the bare core, without lowering test success |
 | B4 | API memory vs RAG (the main experiment, 72 tasks × 4 arms) | as in the README |
 | B5 | Agent integration (OpenAI-compatible server for the Pi harness): time per agent step, end to end | — |

@@ -2,6 +2,10 @@
 
 Newest first. Each entry: date, decision, why, what would change it.
 
+## 2026-10-20 — Context memory is prior art: use and measure, don't reinvent
+- **Decision:** B2 starts by evaluating existing persistent-KV tools for llama.cpp on the RTX 3060 with Ornith 9B, and contributes upstream where hybrid-model support is broken. The project's original contribution is the library memory and the integration of both memories.
+- **Why:** a search found active 2026 work on exactly this (KVMem, CachyLLama, local-llm-kv-cache, pi-kv-cache-manager, the "Agent Memory Below the Prompt" paper, LinearKV for hybrid models) and open llama.cpp issues on hybrid checkpoint persistence. An earlier claim that hybrid models cannot compose cached blocks was wrong (LinearKV).
+
 ## 2026-10-20 — Build our own architecture instead of reproducing TF-Engram
 - **Decision:** the project builds two memories of its own: **context snapshots on the SSD** and **library memory with self-encoded values**. TF-Engram stops being a reproduction target and becomes prior art and a design reference; the authors' questions remain optional.
 - **Why:** (1) the audit shows the paper cannot be reproduced faithfully; (2) self-encoded values (computed by the core model itself) close the gap TF-Engram leaves open, alignment between an external embedder and the backbone; (3) measured prefill on the RTX 3060 (~1,400–1,700 tok/s) against ~0.52 s to load a 50k-token context snapshot from the measured 3.2 GB/s NVMe makes context memory a candidate ~58× gain per agent step, the largest lever found so far.

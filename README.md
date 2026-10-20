@@ -21,7 +21,7 @@ Small open models can already run at home. What they can't do is run *fast enoug
 
 Two memories on cheap storage, one per wall (design: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)):
 
-- **Context memory on the SSD.** Instead of re-reading the repository at every agent step, load the model's own processed context from NVMe. **[measured]** the RTX 3060 re-reads Ornith 9B context at ~1,400–1,700 tok/s (~30 s for 50k tokens); **[measured]** the NVMe reads at 3.2 GB/s, so **[estimate]** loading the same context snapshot (~1.65 GB) takes ~0.5 s: **~58× faster per step**.
+- **Context memory on the SSD** *(prior art, see [ARCHITECTURE](docs/ARCHITECTURE.md#prior-art-this-is-not-new-checked-2026-10-20): we measure and integrate existing tools)*. Instead of re-reading the repository at every agent step, load the model's own processed context from NVMe. **[measured]** the RTX 3060 re-reads Ornith 9B context at ~1,400–1,700 tok/s (~30 s for 50k tokens); **[measured]** the NVMe reads at 3.2 GB/s, so **[estimate]** loading the same context snapshot (~1.65 GB) takes ~0.5 s: **~58× faster per step**.
 - **Library memory.** Version-pinned API knowledge injected into the hidden state, with values computed by the core model itself, shared by the community as source packages and compiled locally per model.
 
 Details:
