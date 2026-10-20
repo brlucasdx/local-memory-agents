@@ -1,0 +1,27 @@
+{
+  "library": "netkit",
+  "version": "0.1.0",
+  "note": "Two phrasings per symbol. 'dev' tunes layer and scale; 'test' is evaluated once with the frozen configuration. Each task contains one of the symbol's key phrases.",
+  "tasks": [
+    {"symbol": "vrx_unfold", "dev": "turn the VLAN range spec \"100 to 110 200\" into a list of VLAN ids", "test": "expand the VLAN ranges allowed on the trunk into individual ids"},
+    {"symbol": "lldp_scan", "dev": "get the LLDP neighbors of the core switch", "test": "list every LLDP neighbors entry seen by sw-access-01"},
+    {"symbol": "oui_owner", "dev": "find the vendor of the MAC 00:1a:2b:3c:4d:5e", "test": "look up the MAC vendor for the unknown device"},
+    {"symbol": "pfx_carve", "dev": "split the prefix 10.0.0.0/22 into /24 networks", "test": "break 192.168.0.0/16 into subnets of length 20"},
+    {"symbol": "ifx_canon", "dev": "convert the interface name GE0/0/1 to the full name", "test": "rewrite XGE1/0/3 in its long form"},
+    {"symbol": "bgp_sess", "dev": "show the BGP sessions on the border router", "test": "check which BGP sessions are down on pe-01"},
+    {"symbol": "ont_rx", "dev": "measure the optical receive power of ONU 12 on olt-3", "test": "get the receive power of the ONU 7 on the north OLT"},
+    {"symbol": "cfg_diff", "dev": "compute the diff between two configurations of the router", "test": "build a configuration diff for yesterday and today backups"},
+    {"symbol": "arp_dump", "dev": "fetch the ARP table of the gateway", "test": "dump the ARP table so we can map IPs to MACs"},
+    {"symbol": "mtu_probe", "dev": "discover the path MTU to 8.8.8.8", "test": "find out the path MTU towards the remote site"},
+    {"symbol": "acl_hits", "dev": "read the hit counters of the ACL EDGE-IN", "test": "collect the ACL rule hits for the management filter"},
+    {"symbol": "trk_members", "dev": "list the member ports of Eth-Trunk1", "test": "show the Eth-Trunk members on the aggregation switch"},
+    {"symbol": "sfp_ddm", "dev": "read the digital diagnostics of port XGE0/0/1", "test": "check the SFP transceiver temperature on the uplink"},
+    {"symbol": "rt_lookup", "dev": "find the route to reach 10.20.30.40 on pe-02", "test": "do a route lookup for the customer IP"},
+    {"symbol": "vrf_list", "dev": "list the VRF instances on the PE router", "test": "enumerate all VRF instances configured on pe-03"},
+    {"symbol": "snmp_walk2", "dev": "walk the SNMP OID subtree 1.3.6.1.2.1.2 on the switch", "test": "walk the OID for the interface table"},
+    {"symbol": "ntp_skew", "dev": "get the clock offset of the firewall", "test": "check the NTP offset of every core device"},
+    {"symbol": "lag_hash", "dev": "read the load balancing hash of Eth-Trunk2", "test": "show which hash mode the uplink aggregation uses"},
+    {"symbol": "poe_budget", "dev": "check the PoE power budget of the access switch", "test": "report the PoE budget left on sw-floor-2"},
+    {"symbol": "stp_root", "dev": "find the spanning tree root for VLAN 10", "test": "tell me the root bridge of VLAN 200"}
+  ]
+}

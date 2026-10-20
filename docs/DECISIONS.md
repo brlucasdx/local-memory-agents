@@ -2,6 +2,11 @@
 
 Newest first. Each entry: date, decision, why, what would change it.
 
+## 2026-10-20 — Library memory v1 (additive self-encoded vectors) failed; move to KV-based library memory
+- **Result:** on the fictional `netkit` library with Qwen3-0.6B, injecting one self-encoded vector per symbol gave 0% exact match on test, identical to the bare model and to the shuffled control, across a 130-configuration dev sweep. The hook was verified active.
+- **Decision:** stop this variant. Next: library packages as precompiled KV blocks loaded from NVMe (reusing the B2 mechanism that passed), evaluated on the real core (Ornith 9B via llama.cpp) where RAG is a meaningful baseline.
+- **Would change if:** a token-level variant (e.g. injecting at the generation position with retrieval by hidden-state similarity) shows signal over the shuffled control.
+
 ## 2026-10-20 — Context memory is prior art: use and measure, don't reinvent
 - **Decision:** B2 starts by evaluating existing persistent-KV tools for llama.cpp on the RTX 3060 with Ornith 9B, and contributes upstream where hybrid-model support is broken. The project's original contribution is the library memory and the integration of both memories.
 - **Why:** a search found active 2026 work on exactly this (KVMem, CachyLLama, local-llm-kv-cache, pi-kv-cache-manager, the "Agent Memory Below the Prompt" paper, LinearKV for hybrid models) and open llama.cpp issues on hybrid checkpoint persistence. An earlier claim that hybrid models cannot compose cached blocks was wrong (LinearKV).

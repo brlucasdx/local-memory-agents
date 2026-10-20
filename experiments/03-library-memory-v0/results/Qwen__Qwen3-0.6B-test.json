@@ -1,0 +1,692 @@
+{
+ "model": "Qwen/Qwen3-0.6B",
+ "split": "test",
+ "n_layers": 28,
+ "torch": "2.14.1+cu130",
+ "runs": [
+  {
+   "arm": "bare",
+   "layer": null,
+   "alpha": 0.0,
+   "value": "last",
+   "exact_match": 0.0,
+   "mean_gold_logp": -7.896000361442566,
+   "mean_prompt_tokens": 22.15,
+   "rows": [
+    {
+     "symbol": "vrx_unfold",
+     "predicted": "ethernet",
+     "exact": false,
+     "gold_logp": -9.967367172241211,
+     "prompt_tokens": 22,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "lldp_scan",
+     "predicted": "see_neighbors",
+     "exact": false,
+     "gold_logp": -6.078103065490723,
+     "prompt_tokens": 24,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "oui_owner",
+     "predicted": "legacy",
+     "exact": false,
+     "gold_logp": -9.679031372070312,
+     "prompt_tokens": 20,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "pfx_carve",
+     "predicted": "ipsubnet",
+     "exact": false,
+     "gold_logp": -11.458643913269043,
+     "prompt_tokens": 35,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "ifx_canon",
+     "predicted": "legacy",
+     "exact": false,
+     "gold_logp": -8.606236457824707,
+     "prompt_tokens": 23,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "bgp_sess",
+     "predicted": "ack",
+     "exact": false,
+     "gold_logp": -6.361371994018555,
+     "prompt_tokens": 23,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "ont_rx",
+     "predicted": "ontu7_receive_power",
+     "exact": false,
+     "gold_logp": -4.817339897155762,
+     "prompt_tokens": 26,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "cfg_diff",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -8.858585357666016,
+     "prompt_tokens": 20,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "arp_dump",
+     "predicted": "arpdump",
+     "exact": false,
+     "gold_logp": -0.75860595703125,
+     "prompt_tokens": 23,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "mtu_probe",
+     "predicted": "arp_query",
+     "exact": false,
+     "gold_logp": -4.901460647583008,
+     "prompt_tokens": 21,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "acl_hits",
+     "predicted": "ctl",
+     "exact": false,
+     "gold_logp": -10.415465354919434,
+     "prompt_tokens": 20,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "trk_members",
+     "predicted": "agg",
+     "exact": false,
+     "gold_logp": -10.965144157409668,
+     "prompt_tokens": 21,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "sfp_ddm",
+     "predicted": "thermal",
+     "exact": false,
+     "gold_logp": -9.190820693969727,
+     "prompt_tokens": 22,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "rt_lookup",
+     "predicted": "ROUTELOOKUP",
+     "exact": false,
+     "gold_logp": -7.748607635498047,
+     "prompt_tokens": 19,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "vrf_list",
+     "predicted": "EnumerateVRFInstances",
+     "exact": false,
+     "gold_logp": -7.0181708335876465,
+     "prompt_tokens": 22,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "snmp_walk2",
+     "predicted": "oidwalk",
+     "exact": false,
+     "gold_logp": -6.826903820037842,
+     "prompt_tokens": 18,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "ntp_skew",
+     "predicted": "ctl",
+     "exact": false,
+     "gold_logp": -5.656539440155029,
+     "prompt_tokens": 20,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "lag_hash",
+     "predicted": "upscale",
+     "exact": false,
+     "gold_logp": -10.324474334716797,
+     "prompt_tokens": 20,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "poe_budget",
+     "predicted": "estimate_budget",
+     "exact": false,
+     "gold_logp": -7.959114074707031,
+     "prompt_tokens": 22,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "stp_root",
+     "predicted": "ether",
+     "exact": false,
+     "gold_logp": -10.328021049499512,
+     "prompt_tokens": 22,
+     "matched_positions": 0
+    }
+   ]
+  },
+  {
+   "arm": "rag",
+   "layer": null,
+   "alpha": 0.0,
+   "value": "last",
+   "exact_match": 0.2,
+   "mean_gold_logp": -2.982683928653023,
+   "mean_prompt_tokens": 623.15,
+   "rows": [
+    {
+     "symbol": "vrx_unfold",
+     "predicted": "oui_owner",
+     "exact": false,
+     "gold_logp": -4.51554012298584,
+     "prompt_tokens": 623,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "lldp_scan",
+     "predicted": "oui_owner",
+     "exact": false,
+     "gold_logp": -3.4007699489593506,
+     "prompt_tokens": 625,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "oui_owner",
+     "predicted": "oui_owner",
+     "exact": true,
+     "gold_logp": -5.698037057300098e-05,
+     "prompt_tokens": 621,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "pfx_carve",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -5.054379463195801,
+     "prompt_tokens": 636,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "ifx_canon",
+     "predicted": "ifs_canon",
+     "exact": false,
+     "gold_logp": -1.5113822221755981,
+     "prompt_tokens": 624,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "bgp_sess",
+     "predicted": "ogp_down",
+     "exact": false,
+     "gold_logp": -3.8178887367248535,
+     "prompt_tokens": 624,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "ont_rx",
+     "predicted": "ont_rx",
+     "exact": true,
+     "gold_logp": -0.0014421475352719426,
+     "prompt_tokens": 627,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "cfg_diff",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -3.8715593814849854,
+     "prompt_tokens": 621,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "arp_dump",
+     "predicted": "arp_dump",
+     "exact": true,
+     "gold_logp": -9.56608128035441e-05,
+     "prompt_tokens": 624,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "mtu_probe",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -1.2686219215393066,
+     "prompt_tokens": 622,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "acl_hits",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -5.569744110107422,
+     "prompt_tokens": 621,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "trk_members",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -3.0020062923431396,
+     "prompt_tokens": 622,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "sfp_ddm",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -5.72747278213501,
+     "prompt_tokens": 623,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "rt_lookup",
+     "predicted": "rt_lookup",
+     "exact": true,
+     "gold_logp": -0.35769280791282654,
+     "prompt_tokens": 620,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "vrf_list",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -5.2820725440979,
+     "prompt_tokens": 623,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "snmp_walk2",
+     "predicted": "ont_rx",
+     "exact": false,
+     "gold_logp": -2.4056496620178223,
+     "prompt_tokens": 619,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "ntp_skew",
+     "predicted": "ont_rx",
+     "exact": false,
+     "gold_logp": -0.5485952496528625,
+     "prompt_tokens": 621,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "lag_hash",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -1.0097852945327759,
+     "prompt_tokens": 621,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "poe_budget",
+     "predicted": "oe_budget",
+     "exact": false,
+     "gold_logp": -7.841565132141113,
+     "prompt_tokens": 623,
+     "matched_positions": 0
+    },
+    {
+     "symbol": "stp_root",
+     "predicted": "ont_rx",
+     "exact": false,
+     "gold_logp": -4.467358112335205,
+     "prompt_tokens": 623,
+     "matched_positions": 0
+    }
+   ]
+  },
+  {
+   "arm": "mem",
+   "layer": 4,
+   "alpha": 1.0,
+   "value": "mean",
+   "exact_match": 0.0,
+   "mean_gold_logp": -7.895330625772476,
+   "mean_prompt_tokens": 22.15,
+   "rows": [
+    {
+     "symbol": "vrx_unfold",
+     "predicted": "etherconf",
+     "exact": false,
+     "gold_logp": -9.930895805358887,
+     "prompt_tokens": 22,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "lldp_scan",
+     "predicted": "see_neighbors",
+     "exact": false,
+     "gold_logp": -6.419157981872559,
+     "prompt_tokens": 24,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "oui_owner",
+     "predicted": "legacy",
+     "exact": false,
+     "gold_logp": -9.494797706604004,
+     "prompt_tokens": 20,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "pfx_carve",
+     "predicted": "ipsubnet",
+     "exact": false,
+     "gold_logp": -11.341257095336914,
+     "prompt_tokens": 35,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "ifx_canon",
+     "predicted": "legacy",
+     "exact": false,
+     "gold_logp": -8.520856857299805,
+     "prompt_tokens": 23,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "bgp_sess",
+     "predicted": "ipsessions",
+     "exact": false,
+     "gold_logp": -6.434569358825684,
+     "prompt_tokens": 23,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "ont_rx",
+     "predicted": "enu",
+     "exact": false,
+     "gold_logp": -4.727421760559082,
+     "prompt_tokens": 26,
+     "matched_positions": 6
+    },
+    {
+     "symbol": "cfg_diff",
+     "predicted": "legacy_diff",
+     "exact": false,
+     "gold_logp": -8.997539520263672,
+     "prompt_tokens": 20,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "arp_dump",
+     "predicted": "arpdump",
+     "exact": false,
+     "gold_logp": -0.8714405298233032,
+     "prompt_tokens": 23,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "mtu_probe",
+     "predicted": "arp_query",
+     "exact": false,
+     "gold_logp": -5.202027320861816,
+     "prompt_tokens": 21,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "acl_hits",
+     "predicted": "ctl",
+     "exact": false,
+     "gold_logp": -9.880632400512695,
+     "prompt_tokens": 20,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "trk_members",
+     "predicted": "eth_trunk_members",
+     "exact": false,
+     "gold_logp": -10.844287872314453,
+     "prompt_tokens": 21,
+     "matched_positions": 4
+    },
+    {
+     "symbol": "sfp_ddm",
+     "predicted": "thermal",
+     "exact": false,
+     "gold_logp": -9.129643440246582,
+     "prompt_tokens": 22,
+     "matched_positions": 4
+    },
+    {
+     "symbol": "rt_lookup",
+     "predicted": "ROUTELOOKUP",
+     "exact": false,
+     "gold_logp": -7.295927047729492,
+     "prompt_tokens": 19,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "vrf_list",
+     "predicted": "EnumerateVRFInstances",
+     "exact": false,
+     "gold_logp": -7.3838629722595215,
+     "prompt_tokens": 22,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "snmp_walk2",
+     "predicted": "oidwalk",
+     "exact": false,
+     "gold_logp": -7.2935333251953125,
+     "prompt_tokens": 18,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "ntp_skew",
+     "predicted": "ctl",
+     "exact": false,
+     "gold_logp": -6.423205375671387,
+     "prompt_tokens": 20,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "lag_hash",
+     "predicted": "etherlink",
+     "exact": false,
+     "gold_logp": -9.77682113647461,
+     "prompt_tokens": 20,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "poe_budget",
+     "predicted": "estimate_budget",
+     "exact": false,
+     "gold_logp": -7.839778900146484,
+     "prompt_tokens": 22,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "stp_root",
+     "predicted": "ether",
+     "exact": false,
+     "gold_logp": -10.098956108093262,
+     "prompt_tokens": 22,
+     "matched_positions": 2
+    }
+   ]
+  },
+  {
+   "arm": "mem_shuf",
+   "layer": 4,
+   "alpha": 1.0,
+   "value": "mean",
+   "exact_match": 0.0,
+   "mean_gold_logp": -7.905788064002991,
+   "mean_prompt_tokens": 22.15,
+   "rows": [
+    {
+     "symbol": "vrx_unfold",
+     "predicted": "etherconf",
+     "exact": false,
+     "gold_logp": -9.90796947479248,
+     "prompt_tokens": 22,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "lldp_scan",
+     "predicted": "see_neighbors",
+     "exact": false,
+     "gold_logp": -6.445259094238281,
+     "prompt_tokens": 24,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "oui_owner",
+     "predicted": "legacy",
+     "exact": false,
+     "gold_logp": -9.493571281433105,
+     "prompt_tokens": 20,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "pfx_carve",
+     "predicted": "ethernet",
+     "exact": false,
+     "gold_logp": -11.362844467163086,
+     "prompt_tokens": 35,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "ifx_canon",
+     "predicted": "legacy",
+     "exact": false,
+     "gold_logp": -8.551359176635742,
+     "prompt_tokens": 23,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "bgp_sess",
+     "predicted": "ipsessions",
+     "exact": false,
+     "gold_logp": -6.402710914611816,
+     "prompt_tokens": 23,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "ont_rx",
+     "predicted": "enu",
+     "exact": false,
+     "gold_logp": -4.738582134246826,
+     "prompt_tokens": 26,
+     "matched_positions": 6
+    },
+    {
+     "symbol": "cfg_diff",
+     "predicted": "",
+     "exact": false,
+     "gold_logp": -9.005099296569824,
+     "prompt_tokens": 20,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "arp_dump",
+     "predicted": "arpdump",
+     "exact": false,
+     "gold_logp": -0.8818035125732422,
+     "prompt_tokens": 23,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "mtu_probe",
+     "predicted": "arp_query",
+     "exact": false,
+     "gold_logp": -5.152182102203369,
+     "prompt_tokens": 21,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "acl_hits",
+     "predicted": "ctl",
+     "exact": false,
+     "gold_logp": -9.79819107055664,
+     "prompt_tokens": 20,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "trk_members",
+     "predicted": "eth_trunk_members",
+     "exact": false,
+     "gold_logp": -10.826227188110352,
+     "prompt_tokens": 21,
+     "matched_positions": 4
+    },
+    {
+     "symbol": "sfp_ddm",
+     "predicted": "thermal",
+     "exact": false,
+     "gold_logp": -9.176584243774414,
+     "prompt_tokens": 22,
+     "matched_positions": 4
+    },
+    {
+     "symbol": "rt_lookup",
+     "predicted": "ROUTELOOKUP",
+     "exact": false,
+     "gold_logp": -7.396767616271973,
+     "prompt_tokens": 19,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "vrf_list",
+     "predicted": "EnumerateVRFInstances",
+     "exact": false,
+     "gold_logp": -7.405442237854004,
+     "prompt_tokens": 22,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "snmp_walk2",
+     "predicted": "oidwalk",
+     "exact": false,
+     "gold_logp": -7.27510929107666,
+     "prompt_tokens": 18,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "ntp_skew",
+     "predicted": "ctl",
+     "exact": false,
+     "gold_logp": -6.385800838470459,
+     "prompt_tokens": 20,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "lag_hash",
+     "predicted": "upscale",
+     "exact": false,
+     "gold_logp": -9.94179916381836,
+     "prompt_tokens": 20,
+     "matched_positions": 2
+    },
+    {
+     "symbol": "poe_budget",
+     "predicted": "estimate_budget",
+     "exact": false,
+     "gold_logp": -7.847076416015625,
+     "prompt_tokens": 22,
+     "matched_positions": 3
+    },
+    {
+     "symbol": "stp_root",
+     "predicted": "ether",
+     "exact": false,
+     "gold_logp": -10.121381759643555,
+     "prompt_tokens": 22,
+     "matched_positions": 2
+    }
+   ]
+  }
+ ]
+}

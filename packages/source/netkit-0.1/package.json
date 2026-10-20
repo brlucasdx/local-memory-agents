@@ -1,0 +1,29 @@
+{
+  "format": "local-memory/source-package@0",
+  "library": "netkit",
+  "version": "0.1.0",
+  "license": "CC0-1.0",
+  "provenance": "Fictional library written for the B3 experiment. It does not exist, so no model can have seen it in training.",
+  "symbols": [
+    {"name": "vrx_unfold", "signature": "(spec: str) -> list[int]", "doc": "expand a VLAN range spec like '100 to 110 200' into VLAN ids", "keys": ["VLAN range spec", "VLAN ranges"]},
+    {"name": "lldp_scan", "signature": "(device: str) -> list[dict]", "doc": "list the LLDP neighbors of a device", "keys": ["LLDP neighbors"]},
+    {"name": "oui_owner", "signature": "(mac: str) -> str", "doc": "return the vendor that owns a MAC address prefix", "keys": ["vendor of the MAC", "MAC vendor"]},
+    {"name": "pfx_carve", "signature": "(prefix: str, new_len: int) -> list[str]", "doc": "split an IP prefix into subnets of a new length", "keys": ["split the prefix", "into subnets"]},
+    {"name": "ifx_canon", "signature": "(name: str) -> str", "doc": "normalize an interface name such as GE0/0/1 to its long form", "keys": ["interface name", "long form"]},
+    {"name": "bgp_sess", "signature": "(router: str) -> list[dict]", "doc": "return the BGP sessions and their states on a router", "keys": ["BGP sessions"]},
+    {"name": "ont_rx", "signature": "(olt: str, onu_id: int) -> float", "doc": "read the optical receive power of an ONU in dBm", "keys": ["optical receive power", "receive power of the ONU"]},
+    {"name": "cfg_diff", "signature": "(old: str, new: str) -> str", "doc": "produce a unified diff between two device configurations", "keys": ["diff between two configurations", "configuration diff"]},
+    {"name": "arp_dump", "signature": "(device: str) -> dict[str, str]", "doc": "return the ARP table of a device as ip to mac", "keys": ["ARP table"]},
+    {"name": "mtu_probe", "signature": "(host: str) -> int", "doc": "discover the path MTU to a host", "keys": ["path MTU"]},
+    {"name": "acl_hits", "signature": "(device: str, acl: str) -> dict[int, int]", "doc": "return the hit counters of each rule in an ACL", "keys": ["hit counters", "ACL rule hits"]},
+    {"name": "trk_members", "signature": "(device: str, trunk: str) -> list[str]", "doc": "list the member ports of an Eth-Trunk", "keys": ["member ports", "Eth-Trunk members"]},
+    {"name": "sfp_ddm", "signature": "(device: str, port: str) -> dict", "doc": "read the digital diagnostics of an SFP transceiver", "keys": ["digital diagnostics", "SFP transceiver"]},
+    {"name": "rt_lookup", "signature": "(router: str, ip: str) -> dict", "doc": "find the route a router uses to reach an IP address", "keys": ["route to reach", "route lookup"]},
+    {"name": "vrf_list", "signature": "(router: str) -> list[str]", "doc": "list the VRF instances configured on a router", "keys": ["VRF instances"]},
+    {"name": "snmp_walk2", "signature": "(host: str, oid: str) -> dict[str, str]", "doc": "walk an SNMP OID subtree on a host", "keys": ["SNMP OID subtree", "walk the OID"]},
+    {"name": "ntp_skew", "signature": "(device: str) -> float", "doc": "return the clock offset of a device against its NTP server in ms", "keys": ["clock offset", "NTP offset"]},
+    {"name": "lag_hash", "signature": "(device: str, trunk: str) -> str", "doc": "return the load balancing hash mode of a link aggregation", "keys": ["load balancing hash", "hash mode"]},
+    {"name": "poe_budget", "signature": "(switch: str) -> dict", "doc": "return the PoE power budget and usage of a switch", "keys": ["PoE power budget", "PoE budget"]},
+    {"name": "stp_root", "signature": "(switch: str, vlan: int) -> str", "doc": "return the spanning tree root bridge for a VLAN", "keys": ["spanning tree root", "root bridge"]}
+  ]
+}
