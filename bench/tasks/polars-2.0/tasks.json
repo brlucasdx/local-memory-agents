@@ -1,0 +1,18 @@
+{
+  "library": "polars",
+  "version": "2.0.0",
+  "released": "2026-10-06",
+  "template": "In this folder, write solution.py containing the function `{signature}` that {goal}. Use the polars library that is installed (version 2.0.0). Check your function by running a quick example with python3 before finishing.",
+  "tasks": [
+    {"id": "parse_dates", "kind": "error-with-hint", "signature": "parse_dates(df: pl.DataFrame) -> pl.DataFrame", "goal": "returns df with the String column \"day\" (format YYYY-MM-DD) converted to the Date dtype"},
+    {"id": "parse_datetimes", "kind": "error-with-hint", "signature": "parse_datetimes(df: pl.DataFrame) -> pl.DataFrame", "goal": "returns df with the String column \"ts\" (format YYYY-MM-DD HH:MM:SS) converted to the Datetime dtype"},
+    {"id": "parse_times", "kind": "error-with-hint", "signature": "parse_times(df: pl.DataFrame) -> pl.DataFrame", "goal": "returns df with the String column \"t\" (format HH:MM:SS) converted to the Time dtype"},
+    {"id": "category_codes", "kind": "error-with-hint", "signature": "category_codes(df: pl.DataFrame) -> pl.DataFrame", "goal": "adds a UInt32 column \"code\" holding the physical integer code of the Categorical column \"site\""},
+    {"id": "codes_to_enum", "kind": "error-with-hint", "signature": "codes_to_enum(codes: pl.Series, labels: list[str]) -> pl.Series", "goal": "turns a UInt32 Series of integer codes into an Enum Series over `labels` (code 0 -> labels[0], 1 -> labels[1], ...)"},
+    {"id": "rtt_std_seconds", "kind": "error", "signature": "rtt_std_seconds(df: pl.DataFrame) -> float", "goal": "returns the sample standard deviation, in seconds as a float, of the Duration column \"rtt\""},
+    {"id": "side_by_side", "kind": "error", "signature": "side_by_side(left: pl.DataFrame, right: pl.DataFrame) -> pl.DataFrame", "goal": "concatenates the two frames horizontally (their column names never clash) even when they have different heights, padding the shorter one with nulls at the bottom"},
+    {"id": "explode_keep_empty", "kind": "silent", "signature": "explode_keep_empty(df: pl.DataFrame) -> pl.DataFrame", "goal": "explodes the list column \"tags\" into one row per tag, keeping exactly one row with a null tag for every device whose tag list is empty"},
+    {"id": "csv_rx_total", "kind": "silent", "signature": "csv_rx_total(csv_text: str) -> int", "goal": "parses headerless CSV text whose columns are interface, rx_bytes, tx_bytes (in that order) and returns the sum of rx_bytes"},
+    {"id": "csv_named", "kind": "error", "signature": "csv_named(csv_text: str) -> pl.DataFrame", "goal": "reads headerless CSV text with three columns (host, vlan, status in that order) and returns a DataFrame whose columns are named exactly host, vlan, status, by first reading it with polars' default column names and then renaming them"}
+  ]
+}

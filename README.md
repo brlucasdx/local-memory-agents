@@ -46,7 +46,7 @@ The core mechanism is published: [DeepSeek Engram](https://arxiv.org/abs/2601.07
 | 3 | Library memory v1 (self-encoded additive vectors) | **failed: 0% vs 0% bare** ([results](experiments/03-library-memory-v0/README.md)) |
 | 3b | **Library memory v2: compiled KV packages** | **done: 100% exact match like RAG at ×27 lower latency** ([results](experiments/03b-library-kv-packages/README.md)) |
 | 5′ | **Agent integration** (Pi + proxy + llama.cpp + package) | **done: session 23.1 s → 13.1 s, prompt tokens 16,865 → 739, 6/6 graded** ([results](experiments/05-agent-integration/README.md)) |
-| 4 | **API memory vs RAG**: 72 executable tasks × 4 arms | API errors −30%, success +10 pp vs bare model; ≥ RAG success with ≥15% less wall time |
+| 4 | **Real library (Polars 2.0) in the agent: nolib vs RAG vs whole-doc package** | **done, gates failed: RAG 10/10 in 24.5 s beat the package 9/10 in 64.1 s; nolib 7/10, 0/2 on silent changes** ([results](experiments/04-api-memory-vs-rag/README.md)) |
 | 5 | Memory packages per library/version | — |
 | 6 | Composable per-file context (research extension) | — |
 

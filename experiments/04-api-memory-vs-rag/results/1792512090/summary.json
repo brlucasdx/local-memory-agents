@@ -1,0 +1,38 @@
+{
+ "nolib": {
+  "success": 7,
+  "n": 10,
+  "by_kind": {
+   "error": "2/3",
+   "error-with-hint": "5/5",
+   "silent": "0/2"
+  },
+  "median_wall_s": 29.36046792200068,
+  "median_prompt_tokens": 1496.5,
+  "median_tool_calls": 5.0
+ },
+ "rag": {
+  "success": 10,
+  "n": 10,
+  "by_kind": {
+   "error": "3/3",
+   "error-with-hint": "5/5",
+   "silent": "2/2"
+  },
+  "median_wall_s": 24.52284371003043,
+  "median_prompt_tokens": 5011.5,
+  "median_tool_calls": 4.5
+ },
+ "pkg": {
+  "success": 9,
+  "n": 10,
+  "by_kind": {
+   "error": "3/3",
+   "error-with-hint": "5/5",
+   "silent": "1/2"
+  },
+  "median_wall_s": 64.14630465197843,
+  "median_prompt_tokens": 926.5,
+  "median_tool_calls": 7.5
+ }
+}

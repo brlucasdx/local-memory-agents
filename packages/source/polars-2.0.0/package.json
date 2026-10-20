@@ -1,0 +1,8 @@
+{
+  "format": "local-memory/source-package@0-doc",
+  "library": "polars",
+  "version": "2.0.0",
+  "license": "MIT (see LICENSE-polars; Copyright (c) the Polars authors)",
+  "provenance": "UPGRADE-2.md is the official upgrade guide docs/source/releases/upgrade/2.md from github.com/pola-rs/polars, fetched 2026-10-20, unmodified.",
+  "documents": ["UPGRADE-2.md"]
+}

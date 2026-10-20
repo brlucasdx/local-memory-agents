@@ -2,6 +2,11 @@
 
 Newest first. Each entry: date, decision, why, what would change it.
 
+## 2026-10-20 — B4 (real library, Polars 2.0): RAG beat the whole-doc package
+- **Result:** nolib 7/10 (0/2 silent changes), RAG with 3 sections 10/10 in 24.5 s median, package with the whole 23k-token official guide 9/10 in 64.1 s median (fewest prompt tokens, but more tool calls).
+- **Decision:** library knowledge for a small model should be delivered **selectively** (retrieved sections), with SSD snapshots reserved for large stable prefixes. Next: a *selective package* (index of the library's docs + snapshots of the stable agent prefix), measured against this RAG baseline.
+- **Would change if:** a rerun with more repetitions shows the time gap is noise, or a larger core uses the whole guide as well as the excerpts.
+
 ## 2026-10-20 — Agent integration works end to end (E5)
 - **Result:** Pi + local-llm-kv-cache proxy + llama.cpp + Ornith 9B with the netkit library package in the system prompt: 6/6 executed-and-graded tasks; median session 13.1 s with SSD snapshots vs 23.1 s cold (prompt tokens processed 739 vs 16,865). Without the library the agent also succeeded 6/6 by reading the stub's source, but took 24.3 s.
 - **Decision:** the integrated stack is the project's working baseline. Next experiment targets the case where the source is not cheaply readable, and a real library.

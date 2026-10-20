@@ -26,3 +26,5 @@ packages/compiled/
 # raw agent session transcripts contain the local system prompt (personal skills, paths): keep local
 experiments/05-agent-integration/results/*/sessions/
 experiments/05-agent-integration/results/*/warmup-sessions/
+experiments/04-api-memory-vs-rag/results/*/sessions/
+experiments/04-api-memory-vs-rag/results/*/warmup-sessions/
