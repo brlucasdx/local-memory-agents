@@ -42,8 +42,10 @@ The core mechanism is published: [DeepSeek Engram](https://arxiv.org/abs/2601.07
 |---|---|---|
 | 0 | Local baseline (Ornith 9B, Pi harness, prefill rate) | done, see [experiments/00-baseline-local](experiments/00-baseline-local) |
 | 1 | TF-Engram reproducibility audit | **done: 6 of 10 decisive details unspecified; questions drafted for the authors**, see [AUDIT](experiments/01-tf-engram-audit/AUDIT.md) |
-| 2 | **Context snapshots on SSD** (prefix snapshots for hybrid models) | same logits as recomputation; warm load < 10% of prefill time |
-| 3 | **Library memory v0** (self-encoded values, source/compiled packages) | fewer invented API calls on the dev split without lowering success |
+| 2 | **Context snapshots on SSD** (prefix snapshots for hybrid models) | **done: ×60 at 60k tokens, identical output** ([results](experiments/02-context-snapshots-ssd/README.md)) |
+| 3 | Library memory v1 (self-encoded additive vectors) | **failed: 0% vs 0% bare** ([results](experiments/03-library-memory-v0/README.md)) |
+| 3b | **Library memory v2: compiled KV packages** | **done: 100% exact match like RAG at ×27 lower latency** ([results](experiments/03b-library-kv-packages/README.md)) |
+| 5′ | **Agent integration** (Pi + proxy + llama.cpp + package) | **done: session 23.1 s → 13.1 s, prompt tokens 16,865 → 739, 6/6 graded** ([results](experiments/05-agent-integration/README.md)) |
 | 4 | **API memory vs RAG**: 72 executable tasks × 4 arms | API errors −30%, success +10 pp vs bare model; ≥ RAG success with ≥15% less wall time |
 | 5 | Memory packages per library/version | — |
 | 6 | Composable per-file context (research extension) | — |

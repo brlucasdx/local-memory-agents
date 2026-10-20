@@ -22,3 +22,7 @@ experiments/01-tf-engram-audit/work/
 
 # compiled library-memory packages are model-specific build outputs
 packages/compiled/
+
+# raw agent session transcripts contain the local system prompt (personal skills, paths): keep local
+experiments/05-agent-integration/results/*/sessions/
+experiments/05-agent-integration/results/*/warmup-sessions/

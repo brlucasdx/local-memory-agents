@@ -1,0 +1,14 @@
+{
+  "library": "netkit",
+  "version": "0.2.0",
+  "template": "Write check.py in this folder that uses the netkit library (the module netkit.py is already here) to {goal}, prints the result, then run it with: python3 check.py",
+  "warmup": {"symbol": "vrf_list", "goal": "list the VRF instances on the router pe-01"},
+  "tasks": [
+    {"symbol": "lldp_scan", "goal": "get the LLDP neighbors of the switch sw-core-01"},
+    {"symbol": "oui_owner", "goal": "find the vendor of the MAC 00:1a:2b:3c:4d:5e"},
+    {"symbol": "pfx_carve", "goal": "split the prefix 10.0.0.0/22 into /24 networks"},
+    {"symbol": "ont_rx", "goal": "measure the optical receive power of ONU 12 on olt-3"},
+    {"symbol": "acl_hits", "goal": "read the hit counters of the ACL EDGE-IN on the firewall fw-01"},
+    {"symbol": "stp_root", "goal": "find the spanning tree root for VLAN 10 on the switch sw-core-01"}
+  ]
+}

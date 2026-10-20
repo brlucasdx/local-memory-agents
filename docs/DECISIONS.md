@@ -2,6 +2,10 @@
 
 Newest first. Each entry: date, decision, why, what would change it.
 
+## 2026-10-20 — Agent integration works end to end (E5)
+- **Result:** Pi + local-llm-kv-cache proxy + llama.cpp + Ornith 9B with the netkit library package in the system prompt: 6/6 executed-and-graded tasks; median session 13.1 s with SSD snapshots vs 23.1 s cold (prompt tokens processed 739 vs 16,865). Without the library the agent also succeeded 6/6 by reading the stub's source, but took 24.3 s.
+- **Decision:** the integrated stack is the project's working baseline. Next experiment targets the case where the source is not cheaply readable, and a real library.
+
 ## 2026-10-20 — Library memory = compiled KV packages (v2 passes)
 - **Result:** on Ornith 9B, a 14k-token library reference shipped as a KV snapshot on NVMe gave 100% exact match (bare 0%, RAG 100%) with time to first token 0.34 s vs 9.04 s for RAG (×27). Output byte-identical to RAG in 34/40 tasks; the chosen function was identical in 40/40.
 - **Decision:** library memory continues as compiled KV packages. The two memories in ARCHITECTURE.md become one mechanism (persistent KV snapshots) with two content types: libraries (shared, community-built) and project context (local).

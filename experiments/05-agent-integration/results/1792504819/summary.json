@@ -1,0 +1,30 @@
+{
+ "cold": {
+  "success": 6,
+  "n": 6,
+  "median_wall_s": 23.068993749446236,
+  "median_prompt_tokens": 16865.0,
+  "median_tool_calls": 4.0
+ },
+ "ssd": {
+  "success": 6,
+  "n": 6,
+  "median_wall_s": 13.0835033240146,
+  "median_prompt_tokens": 739.0,
+  "median_tool_calls": 4.5
+ },
+ "ram": {
+  "success": 6,
+  "n": 6,
+  "median_wall_s": 11.763087750528939,
+  "median_prompt_tokens": 914.5,
+  "median_tool_calls": 4.0
+ },
+ "nolib": {
+  "success": 6,
+  "n": 6,
+  "median_wall_s": 24.280745227995794,
+  "median_prompt_tokens": 3154.5,
+  "median_tool_calls": 5.5
+ }
+}

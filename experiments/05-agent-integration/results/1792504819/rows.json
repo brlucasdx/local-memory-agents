@@ -1,0 +1,362 @@
+[
+ {
+  "arm": "cold",
+  "symbol": "lldp_scan",
+  "wall_s": 24.27914856793359,
+  "timed_out": false,
+  "prompt_tokens_processed": 17637.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "lldp_scan"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "cold",
+  "symbol": "oui_owner",
+  "wall_s": 24.285009535960853,
+  "timed_out": false,
+  "prompt_tokens_processed": 16948.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "oui_owner"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "cold",
+  "symbol": "pfx_carve",
+  "wall_s": 24.418994018924423,
+  "timed_out": false,
+  "prompt_tokens_processed": 16614.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "pfx_carve"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "cold",
+  "symbol": "ont_rx",
+  "wall_s": 21.336913008941337,
+  "timed_out": false,
+  "prompt_tokens_processed": 16910.0,
+  "tool_calls": 3,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "ont_rx"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "cold",
+  "symbol": "acl_hits",
+  "wall_s": 19.911852338002063,
+  "timed_out": false,
+  "prompt_tokens_processed": 16820.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "acl_hits"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "cold",
+  "symbol": "stp_root",
+  "wall_s": 21.858838930958882,
+  "timed_out": false,
+  "prompt_tokens_processed": 16614.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "stp_root"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ssd",
+  "symbol": "lldp_scan",
+  "wall_s": 12.698361649992876,
+  "timed_out": false,
+  "prompt_tokens_processed": 734.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "lldp_scan"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ssd",
+  "symbol": "oui_owner",
+  "wall_s": 10.962004236062057,
+  "timed_out": false,
+  "prompt_tokens_processed": 524.0,
+  "tool_calls": 3,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "oui_owner"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ssd",
+  "symbol": "pfx_carve",
+  "wall_s": 13.874890709063038,
+  "timed_out": false,
+  "prompt_tokens_processed": 833.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "pfx_carve"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ssd",
+  "symbol": "ont_rx",
+  "wall_s": 8.724933604942635,
+  "timed_out": false,
+  "prompt_tokens_processed": 744.0,
+  "tool_calls": 3,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "ont_rx"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ssd",
+  "symbol": "acl_hits",
+  "wall_s": 15.68233052000869,
+  "timed_out": false,
+  "prompt_tokens_processed": 899.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "acl_hits"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ssd",
+  "symbol": "stp_root",
+  "wall_s": 13.468644998036325,
+  "timed_out": false,
+  "prompt_tokens_processed": 678.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "stp_root"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ram",
+  "symbol": "lldp_scan",
+  "wall_s": 11.221781713073142,
+  "timed_out": false,
+  "prompt_tokens_processed": 925.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "lldp_scan"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ram",
+  "symbol": "oui_owner",
+  "wall_s": 11.861441156012006,
+  "timed_out": false,
+  "prompt_tokens_processed": 772.0,
+  "tool_calls": 3,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "oui_owner"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ram",
+  "symbol": "pfx_carve",
+  "wall_s": 17.24282757996116,
+  "timed_out": false,
+  "prompt_tokens_processed": 904.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "pfx_carve"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ram",
+  "symbol": "ont_rx",
+  "wall_s": 9.375276283943094,
+  "timed_out": false,
+  "prompt_tokens_processed": 583.0,
+  "tool_calls": 3,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "ont_rx"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ram",
+  "symbol": "acl_hits",
+  "wall_s": 11.664734345045872,
+  "timed_out": false,
+  "prompt_tokens_processed": 1204.0,
+  "tool_calls": 4,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "acl_hits"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "ram",
+  "symbol": "stp_root",
+  "wall_s": 12.842029967927374,
+  "timed_out": false,
+  "prompt_tokens_processed": 1042.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "stp_root"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "nolib",
+  "symbol": "lldp_scan",
+  "wall_s": 27.241011883015744,
+  "timed_out": false,
+  "prompt_tokens_processed": 20471.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "lldp_scan"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "nolib",
+  "symbol": "oui_owner",
+  "wall_s": 21.320478572975844,
+  "timed_out": false,
+  "prompt_tokens_processed": 2457.0,
+  "tool_calls": 6,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "oui_owner"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "nolib",
+  "symbol": "pfx_carve",
+  "wall_s": 33.540097840013914,
+  "timed_out": false,
+  "prompt_tokens_processed": 19581.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "pfx_carve"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "nolib",
+  "symbol": "ont_rx",
+  "wall_s": 19.999239533091895,
+  "timed_out": false,
+  "prompt_tokens_processed": 3034.0,
+  "tool_calls": 6,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "ont_rx"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "nolib",
+  "symbol": "acl_hits",
+  "wall_s": 16.327694284031168,
+  "timed_out": false,
+  "prompt_tokens_processed": 2155.0,
+  "tool_calls": 5,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "acl_hits"
+  ],
+  "stderr_tail": ""
+ },
+ {
+  "arm": "nolib",
+  "symbol": "stp_root",
+  "wall_s": 27.37973637098912,
+  "timed_out": false,
+  "prompt_tokens_processed": 3275.0,
+  "tool_calls": 7,
+  "agent_exit": 0,
+  "success": true,
+  "exit": 0,
+  "called": [
+   "stp_root"
+  ],
+  "stderr_tail": ""
+ }
+]
