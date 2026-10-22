@@ -2,6 +2,10 @@
 
 Newest first. Each entry: date, decision, why, what would change it.
 
+## 2026-10-22 — Speculative decoding (E8): DFlash 2.0–2.3× on new code, but not byte-identical
+- **Result:** with the community Ornith DFlash drafter on llama.cpp v0.7.0, decode went from ~40 to 84–95 tok/s on new code and 183 tok/s on a copy-heavy edit; greedy output diverged from the baseline on generative tasks. n-gram speculation only helped edits (2.1×, lossless).
+- **Decision:** do not adopt DFlash as default yet. Next: a graded quality check (B4 tasks with DFlash on vs off) to decide whether the divergence costs correctness.
+
 ## 2026-10-20 — B4 (real library, Polars 2.0): RAG beat the whole-doc package
 - **Result:** nolib 7/10 (0/2 silent changes), RAG with 3 sections 10/10 in 24.5 s median, package with the whole 23k-token official guide 9/10 in 64.1 s median (fewest prompt tokens, but more tool calls).
 - **Decision:** library knowledge for a small model should be delivered **selectively** (retrieved sections), with SSD snapshots reserved for large stable prefixes. Next: a *selective package* (index of the library's docs + snapshots of the stable agent prefix), measured against this RAG baseline.
